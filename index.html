@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>MANGA BUFF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="gate-style">
+  body.locked { overflow: hidden; }
+  body.locked > *:not(#gate) { display: none !important; }
+  #gate {
+    position: fixed; inset: 0; background: #1A1A2E; z-index: 99999;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Noto Sans JP", sans-serif; color: white; padding: 24px;
+  }
+  #gate.hidden { display: none; }
+  .gate-card {
+    background: white; color: #1A1A2E; padding: 48px 40px;
+    border-radius: 24px; max-width: 420px; width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .gate-brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-weight: 900; font-size: 16px; margin-bottom: 28px;
+  }
+  .gate-brand .mark {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, #FF6B35, #FFB627);
+    color: white; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900;
+  }
+  #gate h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.01em; }
+  #gate p { font-size: 14px; color: #6B6B6B; margin-bottom: 24px; font-weight: 500; line-height: 1.7; }
+  #gate input {
+    width: 100%; padding: 14px 18px; border: 1px solid #E8E5E0;
+    border-radius: 12px; font-size: 15px; font-weight: 600;
+    font-family: inherit; margin-bottom: 12px;
+    outline: none; transition: all 0.15s;
+  }
+  #gate input:focus { border-color: #FF6B35; box-shadow: 0 0 0 3px rgba(255,107,53,0.15); }
+  #gate button {
+    width: 100%; padding: 14px; background: #FF6B35; color: white;
+    border: none; border-radius: 12px; font-size: 15px; font-weight: 800;
+    cursor: pointer; font-family: inherit; transition: all 0.15s;
+  }
+  #gate button:hover { background: #E8541F; }
+  #gate .err { color: #FF4757; font-size: 13px; margin-top: 8px; font-weight: 600; display: none; }
+  #gate .err.show { display: block; }
+</style>
+<style>
+  :root {
+    --primary: #FF6B35;
+    --primary-deep: #E8541F;
+    --primary-light: #FFF0E6;
+    --accent: #FFB627;
+    --ink: #1A1A2E;
+    --ink-soft: #4A4A5E;
+    --sub: #8A8A95;
+    --border: #E8E5E0;
+    --rule: #EFECE7;
+    --bg: #FFFFFF;
+    --bg-soft: #FAFAFA;
+    --bg-blue: #FFF8F0;
+    --green: #22C55E;
+    --warn: #FF9500;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Noto Sans JP", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    line-height: 1.8;
+    background: var(--bg);
+    font-weight: 500;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === Nav === */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    background: var(--ink);
+    color: white;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--primary);
+  }
+
+  /* === Hero === */
+  .hero {
+    background: linear-gradient(180deg, var(--bg-blue) 0%, var(--bg) 100%);
+    padding: 100px 0 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 182, 39, 0.12) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(255, 107, 53, 0.1);
+  }
+
+  .hero-badge::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .hero h1 .gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 20px);
+    font-weight: 500;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0 auto 56px;
+    line-height: 1.9;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 107, 53, 0.4);
+  }
+
+  .btn-primary::after {
+    content: '→';
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover::after {
+    transform: translateX(4px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 18px 36px;
+    background: white;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  /* === Hero Stats === */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .stat {
+    background: white;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .stat:hover {
+    background: var(--bg-blue);
+  }
+
+  .stat-value {
+    font-family: "Inter", "Noto Sans JP", sans-serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-value .unit {
+    font-size: 0.55em;
+    color: var(--primary);
+    margin-left: 4px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sub);
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  /* === Section === */
+  section {
+    padding: 120px 0;
+  }
+
+  section.bg-soft { background: var(--bg-soft); }
+
+  section.bg-dark {
+    background: var(--ink);
+    color: white;
+  }
+
+  .section-head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .section-head.left {
+    text-align: left;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding: 6px 16px;
+    background: var(--primary-light);
+    border-radius: 100px;
+  }
+
+  section.bg-dark .section-label {
+    background: rgba(255, 107, 53, 0.15);
+    color: var(--accent);
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  section.bg-dark .section-title { color: white; }
+
+  .section-title .gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .section-lead {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.9;
+    font-weight: 500;
+  }
+
+  .section-head.left .section-lead {
+    margin: 0;
+  }
+
+  section.bg-dark .section-lead { color: rgba(255, 255, 255, 0.75); }
+
+  /* === Problem === */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .problem-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .problem-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.12);
+  }
+
+  .problem-num {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+
+  .problem-card h3 {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .problem-card p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 500;
+  }
+
+  /* === Solution === */
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .solution-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 28px;
+    transition: all 0.2s;
+  }
+
+  .solution-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.1);
+  }
+
+  .solution-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary-light), #FFF5E0);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+
+  .solution-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .solution-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    font-weight: 500;
+  }
+
+  /* === Flow === */
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    counter-reset: step;
+  }
+
+  .flow-step {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 32px 32px;
+    position: relative;
+    counter-increment: step;
+  }
+
+  .flow-step::before {
+    content: counter(step);
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-family: "Inter", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--primary-light);
+    line-height: 1;
+  }
+
+  .flow-step-label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .flow-step h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .flow-step p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    font-weight: 500;
+  }
+
+  /* === Two Column === */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  @media (max-width: 720px) {
+    .two-col { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .col-label {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    background: var(--primary-light);
+    border-radius: 100px;
+  }
+
+  .col-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+
+  .feature-list li {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .feature-list li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 20px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6.5L5 9L10 3.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* === Highlight Box === */
+  .hl-box {
+    background: var(--primary-light);
+    border-left: 4px solid var(--primary);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 40px 0;
+  }
+
+  .hl-box strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .hl-box p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    font-weight: 500;
+  }
+
+  /* === Money Card === */
+  .money-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 56px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  }
+
+  @media (max-width: 640px) {
+    .money-card { padding: 32px 24px; }
+  }
+
+  .money-card h3 {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .money-bar {
+    display: flex;
+    height: 72px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .money-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+
+  .seg-store { background: #6B5B4E; flex: 70; }
+  .seg-rlz { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); flex: 30; }
+
+  .money-labels {
+    display: flex;
+    font-size: 13px;
+    color: var(--sub);
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+
+  .money-labels > div:first-child { flex: 70; text-align: center; }
+  .money-labels > div:last-child { flex: 30; text-align: center; }
+
+  .inner-box {
+    background: var(--bg-blue);
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 20px;
+  }
+
+  .inner-box h4 {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .split-bar {
+    display: flex;
+    height: 56px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 12px 0;
+  }
+
+  .split-author {
+    background: linear-gradient(135deg, var(--green), #16A34A);
+    flex: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+  }
+
+  .split-rlz-small {
+    background: #A8ACB4;
+    flex: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+  }
+
+  /* === Example === */
+  .example-card {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(255, 107, 53, 0.05));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 36px;
+  }
+
+  .example-card > h4 {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .example-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+  }
+
+  .example-row.highlight {
+    background: linear-gradient(135deg, var(--green), #16A34A);
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+    border-color: transparent;
+  }
+
+  .example-row.highlight-accent {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+    border-color: transparent;
+  }
+
+  .example-note {
+    font-size: 13px;
+    color: var(--sub);
+    margin-top: 16px;
+    font-weight: 500;
+  }
+
+  /* === Simulation === */
+  .sim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+    margin: 32px 0;
+  }
+
+  .sim-cell {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .sim-cell:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .sim-cell-label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--sub);
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .sim-cell-value {
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .sim-cell-sub {
+    font-size: 12px;
+    color: var(--sub);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  /* === Tables === */
+  .table-wrap {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 28px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 18px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  th {
+    background: var(--bg-soft);
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--sub);
+    letter-spacing: 0.02em;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  td.mb { color: var(--primary); font-weight: 800; }
+
+  .compare-table td:nth-child(2) {
+    background: var(--primary-light);
+    font-weight: 800;
+    color: var(--ink);
+  }
+
+  /* === Compare v2 (duel cards) === */
+  .compare-duel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+  }
+
+  @media (max-width: 720px) {
+    .compare-duel { grid-template-columns: 1fr; }
+    .compare-vs { display: none; }
+  }
+
+  .compare-col {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 32px;
+  }
+
+  .compare-col.mb {
+    background: linear-gradient(180deg, var(--primary-light) 0%, white 100%);
+    border: 2px solid var(--primary);
+    position: relative;
+    box-shadow: 0 12px 32px rgba(255, 107, 53, 0.12);
+  }
+
+  .compare-col.mb::before {
+    content: 'RECOMMENDED';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+
+  .compare-col-head {
+    text-align: center;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-col.mb .compare-col-head {
+    border-bottom-color: rgba(255, 107, 53, 0.3);
+  }
+
+  .compare-col-name {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  .compare-col.mb .compare-col-name {
+    color: var(--primary);
+  }
+
+  .compare-col-sub {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--sub);
+    letter-spacing: 0.05em;
+  }
+
+  .compare-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+
+  .compare-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .compare-list li .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--sub);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .compare-list li .value {
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .compare-col.mb .compare-list li .value {
+    color: var(--ink);
+  }
+
+  .compare-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 12px;
+  }
+
+  .compare-icon.ok {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--green);
+  }
+
+  .compare-icon.ng {
+    background: rgba(138, 138, 149, 0.15);
+    color: var(--sub);
+  }
+
+  .compare-icon.star {
+    background: var(--primary);
+    color: white;
+  }
+
+  .compare-vs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    background: white;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+    z-index: 2;
+    letter-spacing: 0.02em;
+  }
+
+  .diff-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-left: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  /* === Timeline === */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    max-width: 760px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 16px;
+    bottom: 16px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 16px 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 22px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+  }
+
+  .timeline-item strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .timeline-item span {
+    font-size: 13px;
+    color: var(--sub);
+    font-weight: 500;
+  }
+
+  /* === Voice === */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .voice {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    transition: all 0.2s;
+  }
+
+  .voice:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.08);
+  }
+
+  .voice-quote-mark {
+    font-family: "Inter", sans-serif;
+    font-size: 64px;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: -20px;
+    opacity: 0.3;
+  }
+
+  .voice-quote {
+    font-weight: 900;
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: var(--ink);
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+  }
+
+  .voice-author {
+    font-size: 13px;
+    color: var(--sub);
+    line-height: 1.7;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-weight: 500;
+  }
+
+  /* === FAQ === */
+  .faq-group { margin-bottom: 48px; }
+
+  .faq-group-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  details {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 28px;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+
+  details[open] {
+    border-color: var(--primary);
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.08);
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--ink);
+    list-style: none;
+    position: relative;
+    padding-right: 36px;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 2V10M2 6H10' stroke='%23FF6B35' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.2s;
+  }
+
+  details[open] summary::after {
+    background: var(--primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 6H10' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  details > div {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.95;
+    font-weight: 500;
+  }
+
+  /* === Footer === */
+  footer {
+    background: var(--bg-soft);
+    padding: 48px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .footer-meta {
+    font-size: 12px;
+    color: var(--sub);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 80px 0; }
+    .hero { padding: 72px 0 88px; }
+  }
+</style>
+</head>
+<body class="locked">
+
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand"><span class="mark">MB</span>MANGA BUFF</div>
+    <h2>限定プレビュー</h2>
+    <p>このページは招待制の作家向け資料です。アクセスコードを入力してください。</p>
+    <input type="password" id="gate-pw" placeholder="アクセスコード" autocomplete="off" />
+    <button id="gate-btn">閲覧する →</button>
+    <div class="err" id="gate-err">アクセスコードが正しくありません。</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const CORRECT_HASH = '285aaf424e5c24eae0b61348bed407b5219f56abfc8f2b43568bb1a982fce3bf';
+  async function sha256(str) {
+    const buf = new TextEncoder().encode(str);
+    const hash = await crypto.subtle.digest('SHA-256', buf);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+  function unlock() {
+    document.body.classList.remove('locked');
+    document.getElementById('gate').classList.add('hidden');
+  }
+  if (sessionStorage.getItem('mb-unlocked') === '1') unlock();
+  async function tryUnlock() {
+    const pw = document.getElementById('gate-pw').value;
+    const hash = await sha256(pw);
+    if (hash === CORRECT_HASH) {
+      sessionStorage.setItem('mb-unlocked', '1');
+      unlock();
+    } else {
+      document.getElementById('gate-err').classList.add('show');
+    }
+  }
+  document.getElementById('gate-btn').addEventListener('click', tryUnlock);
+  document.getElementById('gate-pw').addEventListener('keydown', e => {
+    if (e.key === 'Enter') tryUnlock();
+  });
+})();
+</script>
+
+
+<!-- === NAV === -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">MB</span>
+      MANGA BUFF
+    </a>
+    <a href="#" class="nav-cta">無料で相談する</a>
+  </div>
+</nav>
+
+<!-- === HERO === -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-badge">個人作家・同人サークル募集中</div>
+    <h1>
+      あなたの漫画を、<br>
+      <span class="gradient">日本中の読者</span>に届ける。
+    </h1>
+    <p class="hero-sub">
+      個人作家・同人サークルの作品を、100以上の電子書店へ一括配信。<br>
+      EPUB制作・書誌入力・書店交渉のすべてを代行し、作家還元率は業界水準の1.5倍となる60%。
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">無料で相談する</a>
+      <a href="#faq" class="btn-secondary">よくある質問を見る</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-value">100<span class="unit">+</span></div>
+        <div class="stat-label">配信先電子書店</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">60<span class="unit">%</span></div>
+        <div class="stat-label">作家還元率（業界の1.5倍）</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">¥0</div>
+        <div class="stat-label">登録料・月額費用</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">1<span class="unit">年</span></div>
+        <div class="stat-label">契約期間（短期離脱可）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === 課題 === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">PROBLEM</span>
+      <h2 class="section-title">作家さんが抱える<br>3つの悩み、ありませんか？</h2>
+      <p class="section-lead">個人で商業電子書店に挑戦しようとすると、多くの作家さんが同じ壁にぶつかります。</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-num">PROBLEM 01</div>
+        <h3>電子書店ごとの<br>交渉が大変</h3>
+        <p>書店ごとに審査・入稿仕様・書誌テンプレートが異なり、個人で全書店を回るのは実質不可能。</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">PROBLEM 02</div>
+        <h3>FANZA同人だけでは<br>頭打ち</h3>
+        <p>同人プラットフォームだけでは読者層が限定される。商業書店に展開して新規読者を獲得したい。</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">PROBLEM 03</div>
+        <h3>従来の取次は<br>還元率が低い</h3>
+        <p>業界標準の取次では作家還元が40%前後。結局自分の手元にいくら残るのかが見えにくい。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === 解決策 === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">SOLUTION</span>
+      <h2 class="section-title"><span class="gradient">MANGA BUFF</span>なら、全部解決。</h2>
+      <p class="section-lead">作家さんは本編データと作品情報を渡すだけ。残りはすべてお任せください。</p>
+    </div>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="solution-icon">🛠</div>
+        <h3>全部代行</h3>
+        <p>書店交渉・EPUB制作・書誌入力・表紙デザインまで対応。作家さんの手間はゼロ。</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">🏪</div>
+        <h3>100書店へ一括</h3>
+        <p>コミックシーモア・LINEマンガ・Kindle・楽天Kobo等の主要書店＋100書店へ。</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">💰</div>
+        <h3>還元率60%</h3>
+        <p>業界水準40%前後に対してMANGA BUFFは60%。業界の1.5倍の手取り。</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">🎨</div>
+        <h3>AI作品も公式対応</h3>
+        <p>AI生成作品も対応。申告いただければ適切な書店を選定して配信します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === フロー === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">FLOW</span>
+      <h2 class="section-title">サービスの<span class="gradient">流れ</span></h2>
+      <p class="section-lead">データ受け渡しから配信開始まで、最短2週間。</p>
+    </div>
+
+    <div class="flow-grid">
+      <div class="flow-step">
+        <div class="flow-step-label">STEP 01</div>
+        <h3>データを渡すだけ</h3>
+        <p>CLIP STUDIO / PSD / JPG / PDF、どれでもOK。表紙用のキャラクターデータもご提供を。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-label">STEP 02</div>
+        <h3>弊社が対応</h3>
+        <p>EPUB化 → 表紙・奥付作成 → 書誌情報整備 → 書店審査対応まで担当。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-label">STEP 03</div>
+        <h3>配信開始</h3>
+        <p>約1〜2週間で全書店展開。進捗はDiscordで随時ご報告。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-label">STEP 04</div>
+        <h3>売上が入金</h3>
+        <p>四半期ごとに還元金を振込。作家さんは作品制作に集中できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === 作家ご用意／弊社対応 === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">DELIVERABLES</span>
+      <h2 class="section-title">ご用意いただくもの／弊社対応</h2>
+      <p class="section-lead">作家さんに必要なのは本編データと作品情報のみ。追加費用は一切かかりません。</p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="col-label">YOUR SIDE</div>
+        <h3 class="col-title">作家さんにご用意いただくもの</h3>
+        <ul class="feature-list">
+          <li>本編データ（CLIP、PSD、JPG、PDF 等）</li>
+          <li>作品タイトル・あらすじ</li>
+          <li>著作権の表明（他社取次で配信中でないこと）</li>
+          <li>表紙用キャラクターデータ（弊社で表紙を制作）</li>
+          <li>SNS ID（X等、奥付に記載用・任意）</li>
+        </ul>
+      </div>
+      <div>
+        <div class="col-label">OUR SIDE</div>
+        <h3 class="col-title">MANGA BUFF が対応すること</h3>
+        <ul class="feature-list">
+          <li>EPUB形式への変換（技術的な最適化含む）</li>
+          <li>表紙・奥付のデザイン（追加費用なし）</li>
+          <li>書誌情報の書店フォーマット変換</li>
+          <li>各書店への配信許諾交渉</li>
+          <li>白抜き・モザイク処理対応</li>
+          <li>セール対応・販促連携</li>
+          <li>売上データの収集・作家さんへの報告</li>
+          <li>書店からの問い合わせ一次対応</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hl-box">
+      <strong>業務委託料40%にすべて含まれます</strong>
+      <p>追加費用は一切かかりません。売上が発生した時だけ、売上の一部から運営費を頂戴する完全成果報酬型です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- === お金の話 === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">MONEY</span>
+      <h2 class="section-title">還元率<span class="gradient">60%</span>の仕組み</h2>
+      <p class="section-lead">「60%」は書店取り分を引いた後、MANGA BUFF に入ってくるお金に対する割合です。</p>
+    </div>
+
+    <div class="money-card">
+      <h3>販売額の内訳（読者が支払う金額 = 100%）</h3>
+      <div class="money-bar">
+        <div class="money-segment seg-store">書店 70%</div>
+        <div class="money-segment seg-rlz">MANGA BUFF 30%</div>
+      </div>
+      <div class="money-labels">
+        <div>書店手数料（業界慣行）</div>
+        <div>本使用料</div>
+      </div>
+
+      <div class="inner-box">
+        <h4>MANGA BUFF 取り分 30% の内訳</h4>
+        <div class="split-bar">
+          <div class="split-author">作家さん 60%</div>
+          <div class="split-rlz-small">MANGA BUFF 40%</div>
+        </div>
+        <p style="font-size: 13px; color: var(--sub); margin-top: 10px; font-weight: 500;">
+          作家さんへの還元率「60%」は、MANGA BUFF の取り分の内訳の話です。
+        </p>
+      </div>
+
+      <div class="example-card">
+        <h4>🎯 1,000円の作品が売れた場合</h4>
+        <div class="example-row">
+          <span>書店（70%）</span>
+          <span>700円</span>
+        </div>
+        <div class="example-row">
+          <span>MANGA BUFF（30%）</span>
+          <span>300円</span>
+        </div>
+        <div class="example-row">
+          <span>　├─ MANGA BUFF 業務委託料（40%）</span>
+          <span>120円</span>
+        </div>
+        <div class="example-row highlight">
+          <span>　└─ 作家さんへの還元（60%）</span>
+          <span>180円</span>
+        </div>
+        <p class="example-note">業界水準（還元率40%前後）なら120円。MANGA BUFFはその1.5倍。</p>
+      </div>
+    </div>
+
+    <div class="hl-box">
+      <strong>「40%」は何に使われる？</strong>
+      <p>配信許諾交渉／EPUB制作・データ変換／表紙・奥付デザイン／書誌情報入力／白抜き・モザイク処理／販促・セール対応／売上データ集計／書店・読者からの問い合わせ対応／ストア管理・仕様変更対応 — これらすべて含んで40%。作家さんが自前でやる手間を時給換算すると圧倒的に得です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- === シミュレーション === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">SIMULATION</span>
+      <h2 class="section-title">収入<span class="gradient">シミュレーション</span></h2>
+      <p class="section-lead">作家手取り = 販売額 × 30%（MANGA BUFF取り分） × 60%（還元率）× 販売数</p>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 900; color: var(--ink); margin: 0 0 20px;">販売価格 990円 の場合</h3>
+    <div class="sim-grid">
+      <div class="sim-cell"><div class="sim-cell-label">10冊/月</div><div class="sim-cell-value">¥1,782</div><div class="sim-cell-sub">年 ¥21,384</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">50冊/月</div><div class="sim-cell-value">¥8,910</div><div class="sim-cell-sub">年 ¥106,920</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">100冊/月</div><div class="sim-cell-value">¥17,820</div><div class="sim-cell-sub">年 ¥213,840</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">300冊/月</div><div class="sim-cell-value">¥53,460</div><div class="sim-cell-sub">年 ¥641,520</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">500冊/月</div><div class="sim-cell-value">¥89,100</div><div class="sim-cell-sub">年 ¥1,069,200</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">1,000冊/月</div><div class="sim-cell-value">¥178,200</div><div class="sim-cell-sub">年 ¥2,138,400</div></div>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 900; color: var(--ink); margin: 56px 0 20px;">実際の売上感（正直にお伝えします）</h3>
+    <div class="hl-box">
+      <strong>同人プラットフォーム（FANZA同人・DLsite等）ほどは売れません</strong>
+      <p>商業電子書店は読者層・価格帯・導線が同人PFと異なるため、同人で月数百〜数千冊売れている作家さんでも、商業配信開始直後は月数十冊〜数百冊のレンジから始まるケースが一般的です。ただし作品数を積み上げるほど月間売上は安定します（10作品あれば各作品の変動が平準化される）。</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>レンジ</th>
+            <th>月間販売数</th>
+            <th>作家手取り/月（990円作品）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>中央値ゾーン</td><td>20〜50冊</td><td class="mb">3,564〜8,910円</td></tr>
+          <tr><td>平均値ゾーン</td><td>50〜150冊</td><td class="mb">8,910〜26,730円</td></tr>
+          <tr><td>上位層</td><td>300冊以上</td><td class="mb">53,460円以上</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 900; color: var(--ink); margin: 56px 0 20px;">セール参加時の事例</h3>
+    <div class="example-card">
+      <h4>通常月50冊の作品が、セール参加月に500冊売れた場合</h4>
+      <div class="example-row">
+        <span>販売価格</span>
+        <span>50%OFF（495円）</span>
+      </div>
+      <div class="example-row">
+        <span>販売数</span>
+        <span>500冊</span>
+      </div>
+      <div class="example-row highlight-accent">
+        <span>作家手取り（通常月の5倍）</span>
+        <span>44,550円</span>
+      </div>
+      <p class="example-note">単価は下がるが販売数が増えるため、トータルで大幅プラス。</p>
+    </div>
+  </div>
+</section>
+
+<!-- === 支払いフロー === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">PAYMENT</span>
+      <h2 class="section-title">支払い<span class="gradient">フロー</span></h2>
+      <p class="section-lead">年4回・四半期ごとの振込。業界標準と同等のサイクルです。</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>読者が書店で購入</strong>
+        <span>スタート</span>
+      </div>
+      <div class="timeline-item">
+        <strong>取次から MANGA BUFF へ売上報告・入金</strong>
+        <span>約1〜3ヶ月後（書店の報告ラグ）</span>
+      </div>
+      <div class="timeline-item">
+        <strong>MANGA BUFF で作家別に還元金計算</strong>
+        <span>四半期末に集計</span>
+      </div>
+      <div class="timeline-item">
+        <strong>作家さんへ金額通知（メール／Discord）</strong>
+        <span>翌月末に通知</span>
+      </div>
+      <div class="timeline-item">
+        <strong>作家さんの口座へ振込</strong>
+        <span>さらに3ヶ月後（販売から最長約7ヶ月）</span>
+      </div>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 900; color: var(--ink); margin: 56px 0 20px;">支払いスケジュール（年4回）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>実売期間</th><th>締切日</th><th>金額通知</th><th>振込日</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>5月〜7月分</td><td>7月末</td><td>8月末</td><td class="mb">11月末</td></tr>
+          <tr><td>8月〜10月分</td><td>10月末</td><td>11月末</td><td class="mb">2月末</td></tr>
+          <tr><td>11月〜1月分</td><td>1月末</td><td>2月末</td><td class="mb">5月末</td></tr>
+          <tr><td>2月〜4月分</td><td>4月末</td><td>5月末</td><td class="mb">8月末</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 900; color: var(--ink); margin: 56px 0 20px;">支払いの細かいルール</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td>振込手数料</td><td class="mb">全額 MANGA BUFF 負担</td></tr>
+          <tr><td>1万円未満の場合</td><td>次回繰越（振込コスト節約）</td></tr>
+          <tr><td>源泉徴収</td><td>個人口座のみ10.21%差引（法人口座は不要）</td></tr>
+          <tr><td>振込タイミング</td><td>各四半期の振込日に一括</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hl-box">
+      <strong>なぜ4ヶ月後払いなのか</strong>
+      <p>① 書店から取次への報告に1〜2ヶ月　② コミックシーモアは販売月から3ヶ月遅れ報告　③ 全書店の数字が揃わないと正確な金額で振込できない — これが業界構造上の理由で、年4回・120日サイト等は業界標準のサイクルです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- === 契約 === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">CONTRACT</span>
+      <h2 class="section-title">契約期間・<span class="gradient">独占範囲</span></h2>
+      <p class="section-lead">短期離脱可、独占は最小限。作家さんのコントロールを最大限残します。</p>
+    </div>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="solution-icon">📅</div>
+        <h3>1年契約・自動更新</h3>
+        <p>1年経過後は3ヶ月前通告で解約可。実質最短13ヶ月で離脱可能。5年縛り等はありません。</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">🔒</div>
+        <h3>独占は預けた作品だけ</h3>
+        <p>お預けいただいた作品を他の取次経由で書店配信するのはNG。それ以外は完全自由。</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">🧪</div>
+        <h3>1作品から試せる</h3>
+        <p>「いきなり全作品預けるのは不安」なら、1作品からでもお預かり可能です。</p>
+      </div>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 900; color: var(--ink); margin: 56px 0 20px;">完全に自由にできること</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td>お預けいただいていない<strong>別の作品</strong>を他取次で配信</td><td class="mb">✓ 自由</td></tr>
+          <tr><td>DLsite（同人PF）</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>FANZA同人</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>BOOTH</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>Kindle Direct Publishing（セルフパブ）</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>自分のウェブサイトでの販売／イベント頒布</td><td class="mb">✓ 自由</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- === 比較 === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">COMPARE</span>
+      <h2 class="section-title">業界水準との<span class="gradient">比較</span></h2>
+      <p class="section-lead">MANGA BUFF が作家さんにとって有利な条件を提示できる理由。</p>
+    </div>
+
+    <div class="compare-duel">
+      <div class="compare-col mb">
+        <div class="compare-col-head">
+          <div class="compare-col-name">MANGA BUFF</div>
+          <div class="compare-col-sub">あなたに有利な条件</div>
+        </div>
+        <ul class="compare-list">
+          <li><span class="compare-icon star">★</span><div><span class="label">還元率</span><span class="value">60%（業界の1.5倍）</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">支払サイクル</span><span class="value">年4回（4ヶ月後）</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">契約期間</span><span class="value">1年＋自動更新</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">独占範囲</span><span class="value">非独占</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">同人PF</span><span class="value">自由</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">セルフパブ</span><span class="value">自由</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">AI作品対応</span><span class="value">公式対応</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">書店数</span><span class="value">100以上</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">入稿頻度</span><span class="value">毎日可</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">広告支援</span><span class="value">あり</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">初期費用</span><span class="value">ゼロ</span></div></li>
+        </ul>
+      </div>
+
+      <div class="compare-col">
+        <div class="compare-col-head">
+          <div class="compare-col-name" style="color: var(--sub);">業界水準</div>
+          <div class="compare-col-sub">一般的な取次</div>
+        </div>
+        <ul class="compare-list">
+          <li><span class="compare-icon ng">–</span><div><span class="label">還元率</span><span class="value" style="color: var(--sub);">40%前後</span></div></li>
+          <li><span class="compare-icon ng">–</span><div><span class="label">支払サイクル</span><span class="value" style="color: var(--sub);">年2〜4回</span></div></li>
+          <li><span class="compare-icon ng">–</span><div><span class="label">契約期間</span><span class="value" style="color: var(--sub);">1〜5年</span></div></li>
+          <li><span class="compare-icon ng">–</span><div><span class="label">独占範囲</span><span class="value" style="color: var(--sub);">作家単位／専有的出版権あり</span></div></li>
+          <li><span class="compare-icon ng">×</span><div><span class="label">同人PF</span><span class="value" style="color: var(--sub);">制限あり</span></div></li>
+          <li><span class="compare-icon ng">×</span><div><span class="label">セルフパブ</span><span class="value" style="color: var(--sub);">制限あり</span></div></li>
+          <li><span class="compare-icon ng">×</span><div><span class="label">AI作品対応</span><span class="value" style="color: var(--sub);">規定なし多い</span></div></li>
+          <li><span class="compare-icon ng">–</span><div><span class="label">書店数</span><span class="value" style="color: var(--sub);">サービスによる</span></div></li>
+          <li><span class="compare-icon ng">–</span><div><span class="label">入稿頻度</span><span class="value" style="color: var(--sub);">月数回制限も</span></div></li>
+          <li><span class="compare-icon ng">×</span><div><span class="label">広告支援</span><span class="value" style="color: var(--sub);">ほぼなし</span></div></li>
+          <li><span class="compare-icon ng">–</span><div><span class="label">初期費用</span><span class="value" style="color: var(--sub);">ほぼゼロ</span></div></li>
+        </ul>
+      </div>
+
+      <div class="compare-vs">VS</div>
+    </div>
+
+    <div style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th><th>MANGA BUFF</th><th>業界水準</th>
+          </tr>
+        </thead>
+        <tbody style="color: white;">
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">還元率</td><td style="background: rgba(255,107,53,0.15); color: var(--accent); font-weight: 800; border-color: rgba(255,255,255,0.08);">60%<span class="diff-badge">1.5倍</span></td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">40%前後</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">支払サイクル</td><td style="background: rgba(255,107,53,0.15); border-color: rgba(255,255,255,0.08);">年4回（4ヶ月後）</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">年2〜4回</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">契約期間</td><td style="background: rgba(255,107,53,0.15); border-color: rgba(255,255,255,0.08);">1年＋自動更新</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">1〜5年</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">独占範囲</td><td style="background: rgba(255,107,53,0.15); border-color: rgba(255,255,255,0.08);">非独占</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">作家単位／専有的出版権あり</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">同人PF</td><td style="background: rgba(255,107,53,0.15); color: var(--green); border-color: rgba(255,255,255,0.08);">✓ 自由</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">制限あり</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">セルフパブ</td><td style="background: rgba(255,107,53,0.15); color: var(--green); border-color: rgba(255,255,255,0.08);">✓ 自由</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">制限あり</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">AI作品対応</td><td style="background: rgba(255,107,53,0.15); color: var(--green); border-color: rgba(255,255,255,0.08);">✓ 公式対応</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">規定なし多い</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">書店数</td><td style="background: rgba(255,107,53,0.15); border-color: rgba(255,255,255,0.08);">100以上</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">サービスによる</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">入稿頻度</td><td style="background: rgba(255,107,53,0.15); border-color: rgba(255,255,255,0.08);">毎日可</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">月数回制限も</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">広告支援</td><td style="background: rgba(255,107,53,0.15); color: var(--green); border-color: rgba(255,255,255,0.08);">✓ あり</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">ほぼなし</td></tr>
+          <tr><td style="border-color: rgba(255,255,255,0.08); color: white;">初期費用</td><td style="background: rgba(255,107,53,0.15); border-color: rgba(255,255,255,0.08);">ゼロ</td><td style="color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08);">ほぼゼロ</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- === 声 === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">VOICES</span>
+      <h2 class="section-title">作家さんの<span class="gradient">声</span></h2>
+      <p class="section-lead">説明会実施済みの作家さんからの反応を抜粋。</p>
+    </div>
+
+    <div class="voice-grid">
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">FANZA同人以外の流通が欲しかった</div>
+        <div class="voice-author">個人サークル運営・手書き作家さん<br>複数書店展開で新規読者層へのリーチを実現</div>
+      </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">既存取次の還元率に納得がいかなかった</div>
+        <div class="voice-author">複数作品保有サークルさん<br>60%還元への切り替えで手取り1.5倍を実現見込み</div>
+      </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">AI作品を取り扱ってくれる取次が少ない</div>
+        <div class="voice-author">AI漫画制作サークルさん<br>公式対応＋AI作品専用の配信先選定で差別化</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === FAQ === -->
+<section id="faq" class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくある<span class="gradient">ご質問</span></h2>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">💰 お金関連</h3>
+      <details>
+        <summary>還元率60%は販売額の60%ですか？</summary>
+        <div>いいえ。還元率は「書店取り分を引いた後、MANGA BUFF に入ってくるお金」に対する割合です。1,000円の作品なら、書店700円・MANGA BUFF 300円 → うち180円（販売額の18%）が作家さんへ。業界水準（40%前後）では120円。<strong>MANGA BUFF は業界水準の1.5倍の手取りです。</strong></div>
+      </details>
+      <details>
+        <summary>初回の振込はいつごろですか？</summary>
+        <div>配信開始から約6ヶ月後が目安です。5月に配信開始すると、5〜7月分の売上が11月末に振込されます。その後は3ヶ月ごとに定期的に振込。</div>
+      </details>
+      <details>
+        <summary>なぜ支払いが4ヶ月後なんですか？</summary>
+        <div>業界構造上の理由です。① 書店から取次への報告に1〜2ヶ月、② コミックシーモアは3ヶ月遅れ報告、③ 全書店の数字が揃わないと正確な金額で振込できない。業界標準（年4回・120日サイト等）と同等のサイクルです。</div>
+      </details>
+      <details>
+        <summary>還元率は後から上げてもらえますか？</summary>
+        <div>実績・関係性に応じて個別にご相談可能です。継続的な配信実績があれば上方修正もご相談いただけます。</div>
+      </details>
+      <details>
+        <summary>書店ごとの個別料率は開示してもらえますか？</summary>
+        <div>書店とのNDAにより個別料率の開示は難しいですが、総合的な還元率（60%〜）は契約書で保証されます。</div>
+      </details>
+      <details>
+        <summary>売上が少ない月も振込してもらえますか？</summary>
+        <div>四半期の累計が1万円未満の場合は次回繰越となります。振込手数料コスト節約のためです（手数料は MANGA BUFF 負担）。</div>
+      </details>
+      <details>
+        <summary>源泉徴収はどうなりますか？</summary>
+        <div>個人口座宛のお振込みの場合、所得税法に基づき10.21%の源泉徴収を差し引いてお支払いします。法人口座宛は源泉徴収不要。</div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">📝 契約関連</h3>
+      <details>
+        <summary>他の取次と契約していても、MANGA BUFF と契約できますか？</summary>
+        <div>はい。MANGA BUFF は作品単位の独占なので、お預けいただく作品が他取次で配信中（または配信契約中）でなければ問題ありません。作品Aは他社取次、作品Bは MANGA BUFF、作品Cはセルフパブ、といった使い分けも可能です。</div>
+      </details>
+      <details>
+        <summary>他取次に契約書を出したが未配信の作品を預けられますか？</summary>
+        <div>可能です。ただし他取次側に「今回は配信を見送る」とお伝えいただく必要があります。同じ作品を同じ書店に二重配信すると書店側でトラブルになるためです。</div>
+      </details>
+      <details>
+        <summary>他取次の契約は解除したほうがいいですか？</summary>
+        <div>解除は不要です。多くの取次の契約は非独占なので、MANGA BUFF と並行して契約を持っていても問題ありません。</div>
+      </details>
+      <details>
+        <summary>1年間縛られるのが不安です</summary>
+        <div>契約期間は1年ですが、配信開始後に「合わない」と感じた場合、3ヶ月前通告で1年経過後に離脱可能です。実質的に「試しに1作品預けてみる」という使い方もできます。</div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">🎨 作品関連</h3>
+      <details>
+        <summary>二次創作も扱えますか？</summary>
+        <div>残念ながら二次創作は権利関係の都合で取り扱いが困難です。一次創作作品のみお預かり可能です。</div>
+      </details>
+      <details>
+        <summary>成人向けでも大丈夫ですか？</summary>
+        <div>成人向け作品を主力として取り扱っています。モザイク処理・白抜き対応等のノウハウもございます。追加費用はかかりません。</div>
+      </details>
+      <details>
+        <summary>縦読みコミック（webtoon）は対応していますか？</summary>
+        <div>はい、対応しています。縦読み形式対応の電子書店にも展開可能です。</div>
+      </details>
+      <details>
+        <summary>AI生成作品も扱えますか？</summary>
+        <div>はい、対応しています。ただし書店によって取り扱いポリシーが異なるため、作品提供時に「AI使用あり」とお知らせください。</div>
+      </details>
+      <details>
+        <summary>海外配信はいつ？</summary>
+        <div>翻訳サービスと連携して順次展開予定です。ご希望の作家さんは個別にご相談ください。</div>
+      </details>
+      <details>
+        <summary>総集編・おまけコンテンツは？</summary>
+        <div>総集編は個別相談で対応可。おまけ単独は基本不可（本編組み込みならOK）。電子書店は「1作品＝1商品」の単位で販売する構造のため。</div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">🛠 運用関連</h3>
+      <details>
+        <summary>作品データの形式は？</summary>
+        <div>CLIP STUDIO形式、PSD、JPG、PDF いずれにも対応しています。最適な形式を個別にご相談しましょう。</div>
+      </details>
+      <details>
+        <summary>表紙制作も依頼できますか？</summary>
+        <div>はい、ご依頼可能です。追加費用なし（業務委託料の40%に含まれます）。</div>
+      </details>
+      <details>
+        <summary>価格は自分で決められますか？</summary>
+        <div>基本的に作家さんが決定権を持ちます。例外は書店主催のセール時のみです（参加することで露出が増えるため、通常プラスに働きます）。</div>
+      </details>
+      <details>
+        <summary>売上データは見られますか？</summary>
+        <div>現在、売上集計システムを構築中です。システム完成までは、作家さんからのお問い合わせベースで確認してお答えするフローで運用しています。</div>
+      </details>
+      <details>
+        <summary>商標・著作権チェック漏れの責任は？</summary>
+        <div>「AIチェック＋目視チェック」の二段階で商標・著作権リスクを確認し、さらに書店側の審査が入るため、実質三段構えでチェックしています。万が一問題が発覚した場合は即座に配信停止と修正対応を行います。ただし最終的な法的責任は権利保有者である作家さんに帰属します（業界標準のルール）。作家さんご自身でも一度チェックいただくことを推奨しています。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">
+      <span class="logo-mark">MB</span>
+      MANGA BUFF
+    </div>
+    <p class="footer-meta">漫画家のための電子書店一括配信サービス　|　© 2026 MANGA BUFF</p>
+  </div>
+</footer>
+
+</body>
+</html>
