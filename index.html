@@ -466,9 +466,19 @@
 
   /* === Solution === */
   .solution-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
+  }
+
+  .solution-grid > .solution-card {
+    flex: 1 1 240px;
+    max-width: 262px;
+  }
+
+  @media (max-width: 560px) {
+    .solution-grid > .solution-card { max-width: 100%; }
   }
 
   .solution-card {
@@ -1362,6 +1372,10 @@
         <div class="stat-value">1<span class="unit">年</span></div>
         <div class="stat-label">契約期間（短期離脱可）</div>
       </div>
+      <div class="stat">
+        <div class="stat-value">50<span class="unit">+</span></div>
+        <div class="stat-label">参加作家・サークル</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1424,6 +1438,11 @@
         <div class="solution-icon">🎨</div>
         <h3>AI作品も公式対応</h3>
         <p>AI生成作品も対応。申告いただければ適切な書店を選定して配信します。</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">💬</div>
+        <h3>Discordで密に伴走</h3>
+        <p>作家さんごとに専用チャンネル。メール中心の取次と違い連絡もレスポンスも速く、月1回の売上共有MTGも実施。</p>
       </div>
     </div>
   </div>
@@ -1629,6 +1648,45 @@
   </div>
 </section>
 
+<!-- === 流入・連載スキーム === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">REACH</span>
+      <h2 class="section-title">「広告で売ってくれるの？」に<br><span class="gradient">正直にお答えします</span></h2>
+      <p class="section-lead">いちばん大事なところなので、ごまかさずにお伝えします。</p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="col-label">正直な話</div>
+        <h3 class="col-title">取次は「広告代理」ではありません</h3>
+        <p style="color: var(--ink-soft); font-size: 15px; line-height: 1.95; font-weight: 500;">
+          MANGA BUFF がやるのは<strong>販路の提供</strong>です。FANZA同人のように「広告でガンガン回して売る」ことは、取次単体ではできません。ここを盛って伝えるサービスもありますが、私たちは正直にお伝えします。<br><br>
+          ただし——商業書店には、同人プラットフォームには無い<strong>「勝手に売れる導線」</strong>があります。
+        </p>
+      </div>
+      <div>
+        <div class="col-label">商業書店の強み</div>
+        <h3 class="col-title">隔離されず、レコメンドに乗る</h3>
+        <ul class="feature-list">
+          <li>コミックシーモア・Kindle等のレコメンドに自然に表示</li>
+          <li>FANZA同人と違い「AI／同人」で棚を隔離されない</li>
+          <li>ランキング・関連作表示から新規読者が勝手に流入</li>
+          <li>書店主催セールに乗せて露出を一気に増やせる</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="example-card" style="margin-top: 40px;">
+      <h4>🚀 さらに：商業連載スキーム（伸びる作品向け）</h4>
+      <p style="color: var(--ink-soft); font-size: 15px; line-height: 1.95; font-weight: 500;">
+        作品によっては、コミックシーモア等に<strong>一定期間の独占配信</strong>を行うことで、<strong>書店側が広告予算を出して宣伝してくれる</strong>枠を狙えます。そこで認知を取ってから同人・他書店へ横展開する——「広告を書店に出してもらう」動き方です。全作品が対象ではありませんが、相性の良い作品はこのルートで一気に伸ばせます。
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- === 支払いフロー === -->
 <section class="bg-soft">
   <div class="container">
@@ -1683,6 +1741,7 @@
           <tr><td>振込手数料</td><td class="mb">全額 MANGA BUFF 負担</td></tr>
           <tr><td>1万円未満の場合</td><td>次回繰越（振込コスト節約）</td></tr>
           <tr><td>源泉徴収</td><td>個人口座のみ10.21%差引（法人口座は不要）</td></tr>
+          <tr><td>インボイス</td><td>未登録の場合、消費税相当分を一部控除（経過措置で段階変動）</td></tr>
           <tr><td>振込タイミング</td><td>各四半期の振込日に一括</td></tr>
         </tbody>
       </table>
@@ -1763,7 +1822,8 @@
           <li><span class="compare-icon ok">✓</span><div><span class="label">AI作品対応</span><span class="value">公式対応</span></div></li>
           <li><span class="compare-icon ok">✓</span><div><span class="label">書店数</span><span class="value">100以上</span></div></li>
           <li><span class="compare-icon ok">✓</span><div><span class="label">入稿頻度</span><span class="value">毎日可</span></div></li>
-          <li><span class="compare-icon ok">✓</span><div><span class="label">広告支援</span><span class="value">あり</span></div></li>
+          <li><span class="compare-icon star">★</span><div><span class="label">連絡・レスポンス</span><span class="value">Discord・即レス／月1売上MTG</span></div></li>
+          <li><span class="compare-icon ok">✓</span><div><span class="label">流入支援</span><span class="value">書店レコメンド＋連載スキーム</span></div></li>
           <li><span class="compare-icon ok">✓</span><div><span class="label">初期費用</span><span class="value">ゼロ</span></div></li>
         </ul>
       </div>
@@ -1783,12 +1843,18 @@
           <li><span class="compare-icon ng">×</span><div><span class="label">AI作品対応</span><span class="value" style="color: var(--sub);">規定なし多い</span></div></li>
           <li><span class="compare-icon ng">–</span><div><span class="label">書店数</span><span class="value" style="color: var(--sub);">サービスによる</span></div></li>
           <li><span class="compare-icon ng">–</span><div><span class="label">入稿頻度</span><span class="value" style="color: var(--sub);">月数回制限も</span></div></li>
-          <li><span class="compare-icon ng">×</span><div><span class="label">広告支援</span><span class="value" style="color: var(--sub);">ほぼなし</span></div></li>
+          <li><span class="compare-icon ng">×</span><div><span class="label">連絡・レスポンス</span><span class="value" style="color: var(--sub);">メール中心・返信が遅い</span></div></li>
+          <li><span class="compare-icon ng">×</span><div><span class="label">流入支援</span><span class="value" style="color: var(--sub);">書店任せ</span></div></li>
           <li><span class="compare-icon ng">–</span><div><span class="label">初期費用</span><span class="value" style="color: var(--sub);">ほぼゼロ</span></div></li>
         </ul>
       </div>
 
       <div class="compare-vs">VS</div>
+    </div>
+
+    <div class="hl-box" style="margin-top: 40px;">
+      <strong>「還元率80%」の他社の方が得では？とよく聞かれます</strong>
+      <p>80%還元のサービスは、表紙制作・モザイク／白抜き・話数分割・書誌入力を<strong>すべて作家さんご自身で行う前提</strong>です。MANGA BUFF の60%は、それらを全部こちらで巻き取った上での数字。手間を時給換算すると、実質的な手取りはMANGA BUFFの方が上回るケースがほとんどです。<strong>「数字の大きさ」ではなく「手間を引いた後に残る額」で比べてみてください。</strong></p>
     </div>
 
     <div style="display: none;">
@@ -1841,6 +1907,25 @@
         <div class="voice-quote">AI作品を取り扱ってくれる取次が少ない</div>
         <div class="voice-author">AI漫画制作サークルさん<br>公式対応＋AI作品専用の配信先選定で差別化</div>
       </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">他社より連絡が速くて、やりやすい</div>
+        <div class="voice-author">他取次から乗り換えのサークルさん<br>レスポンスの速さ・配信スピードが乗り換えの決め手に</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === 作り手として === -->
+<section class="bg-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">WHY US</span>
+      <h2 class="section-title">私たちも、<span class="gradient">同じ作り手です</span></h2>
+    </div>
+    <div style="max-width: 760px; margin: 0 auto; text-align: center; font-size: 16px; line-height: 2; color: rgba(255,255,255,0.82); font-weight: 500;">
+      代表自身が、FANZA同人で2年半・月間ランキング1位・累計2万部を売ってきた現役の作り手出身です（元・広告代理店）。<br><br>
+      「どう作れば売れるか」「何が面倒で、何を任せたいか」を作家さん側の目線で分かっているつもりです。だからこそ面倒な部分は全部こちらで巻き取り、作家さんには制作に集中してほしい——それが MANGA BUFF の出発点です。
     </div>
   </div>
 </section>
@@ -1882,6 +1967,10 @@
       <details>
         <summary>源泉徴収はどうなりますか？</summary>
         <div>個人口座宛のお振込みの場合、所得税法に基づき10.21%の源泉徴収を差し引いてお支払いします。法人口座宛は源泉徴収不要。</div>
+      </details>
+      <details>
+        <summary>インボイス未登録でも大丈夫ですか？</summary>
+        <div>はい、未登録でも契約・配信は可能です。ただし適格請求書発行事業者の登録が無い場合、消費税の仕入税額控除の都合上、消費税相当分の一部を差し引かせていただきます（現在は経過措置により段階的に変動）。登録済みの場合はこの控除はありません。ご自身の状況に合わせてご判断ください。</div>
       </details>
     </div>
 
@@ -1945,7 +2034,7 @@
       </details>
       <details>
         <summary>価格は自分で決められますか？</summary>
-        <div>基本的に作家さんが決定権を持ちます。例外は書店主催のセール時のみです（参加することで露出が増えるため、通常プラスに働きます）。</div>
+        <div>ご希望価格を最大限尊重します。ただし制作・配信のコストを先に当社が負担する関係上、最終的な価格決定権は当社にあります（極端な安売り等で市場全体が崩れるのを防ぐためです）。市場水準と大きくずれていなければ、基本はご希望通りの価格で配信します。なお書店主催セール時のみ一時的な値引きが入りますが、露出が増えるため通常はプラスに働きます。</div>
       </details>
       <details>
         <summary>売上データは見られますか？</summary>
