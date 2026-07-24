@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>契約について ｜ MANGA BUFF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="gate-style">
+  body.locked { overflow: hidden; }
+  body.locked > *:not(#gate) { display: none !important; }
+  #gate { position: fixed; inset: 0; background: #1A1A2E; z-index: 99999; display: flex; align-items: center; justify-content: center; font-family: "Noto Sans JP", sans-serif; color: white; padding: 24px; }
+  #gate.hidden { display: none; }
+  .gate-card { background: white; color: #1A1A2E; padding: 48px 40px; border-radius: 24px; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .gate-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 16px; margin-bottom: 28px; }
+  .gate-brand .mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #FF6B35, #FFB627); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; }
+  #gate h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.01em; }
+  #gate p { font-size: 14px; color: #6B6B6B; margin-bottom: 24px; font-weight: 500; line-height: 1.7; }
+  #gate input { width: 100%; padding: 14px 18px; border: 1px solid #E8E5E0; border-radius: 12px; font-size: 15px; font-weight: 600; font-family: inherit; margin-bottom: 12px; outline: none; transition: all 0.15s; }
+  #gate input:focus { border-color: #FF6B35; box-shadow: 0 0 0 3px rgba(255,107,53,0.15); }
+  #gate button { width: 100%; padding: 14px; background: #FF6B35; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  #gate button:hover { background: #E8541F; }
+  #gate .err { color: #FF4757; font-size: 13px; margin-top: 8px; font-weight: 600; display: none; }
+  #gate .err.show { display: block; }
+</style>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand"><span class="mark">MB</span>MANGA BUFF</div>
+    <h2>限定プレビュー</h2>
+    <p>このページは招待制の作家向け資料です。アクセスコードを入力してください。</p>
+    <input type="password" id="gate-pw" placeholder="アクセスコード" autocomplete="off" />
+    <button id="gate-btn">閲覧する →</button>
+    <div class="err" id="gate-err">アクセスコードが正しくありません。</div>
+  </div>
+</div>
+<script>if(sessionStorage.getItem('mb-unlocked')==='1'){document.body.classList.remove('locked');var g=document.getElementById('gate');if(g)g.classList.add('hidden');}</script>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">MB</span>MANGA BUFF</a>
+    <button class="nav-toggle" aria-label="メニュー"><span></span></button>
+    <ul class="nav-menu">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="service.html">サービス内容</a></li>
+      <li><a href="money.html">料金・お金</a></li>
+      <li><a href="contract.html">契約について</a></li>
+      <li><a href="flow.html">ご相談後の流れ</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="about.html">代表の想い</a></li>
+    </ul>
+    <a href="flow.html" class="nav-cta">相談してみる</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">CONTRACT</span>
+    <h1>契約について</h1>
+    <p>契約は「配信代行の業務委託契約」です。契約期間・独占の範囲・価格の決め方・表紙素材の扱い、そして契約書の全文まで、隠さずすべて載せています。「契約書を見せてください」という方は、このページ下部で全文を読めます。</p>
+  </div>
+</div>
+
+<!-- === 契約期間・独占範囲 === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">TERMS</span>
+      <h2 class="section-title">契約期間・<span class="gradient">独占範囲</span></h2>
+      <p class="section-lead">短期離脱可、独占は最小限。作家さんのコントロールを最大限残します。</p>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-card"><div class="solution-icon">📅</div><h3>1年契約・自動更新</h3><p>1年経過後は3ヶ月前通告で解約可。5年縛り等はありません。</p></div>
+      <div class="solution-card"><div class="solution-icon">🔒</div><h3>独占は預けた作品だけ</h3><p>お預けいただいた作品を他の取次経由で同じ書店に配信するのはNG。それ以外は完全自由。</p></div>
+      <div class="solution-card"><div class="solution-icon">🧪</div><h3>1作品から試せる</h3><p>「いきなり全作品預けるのは不安」なら、1作品からでもお預かり可能です。</p></div>
+    </div>
+
+    <h3 class="block-title">完全に自由にできること</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td>お預けいただいていない<strong>別の作品</strong>を他取次で配信</td><td class="mb">✓ 自由</td></tr>
+          <tr><td>DLsite（同人PF）</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>FANZA同人</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>BOOTH</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>Kindle Direct Publishing（セルフパブ）</td><td class="mb">✓ 自由（作品問わず）</td></tr>
+          <tr><td>自分のウェブサイトでの販売／イベント頒布</td><td class="mb">✓ 自由</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout ok">
+      <strong>解約したら配信中の作品はどうなる？</strong><br>
+      解約しても、配信中の作品は<strong>「配信開始から1年（最低配信期間）」はそのまま配信継続</strong>し、その間も還元率60%等の条件は変わりません。最低配信期間を過ぎた作品は配信を終了します（契約終了後おおむね2ヶ月で各書店の配信が終了）。
+    </div>
+  </div>
+</section>
+
+<!-- === 価格の決定権 === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">PRICING</span>
+      <h2 class="section-title">価格の<span class="gradient">決定権</span></h2>
+      <p class="section-lead">「勝手に値下げされない？」——価格の決め方を正直にお伝えします。</p>
+    </div>
+    <div class="two-col" style="align-items:start;">
+      <div>
+        <div class="callout info" style="margin:0 0 16px;">
+          <strong>ご希望価格を最大限尊重します</strong><br>
+          市場水準と大きくずれていなければ、基本はご希望どおりの価格で配信します。無断で安売りすることはありません。
+        </div>
+        <div class="callout warn" style="margin:0;">
+          <strong>最終的な価格決定権は当社にあります</strong><br>
+          制作・配信のコストを先に当社が負担する関係上、契約書上は当社が価格を決定します。これは<strong>極端な安売りで市場全体が崩れるのを防ぐため</strong>で、勝手に叩き売るためのものではありません。
+        </div>
+      </div>
+      <div>
+        <div class="callout ok" style="margin:0 0 16px;">
+          <strong>値引きが入るのは基本「セール」</strong><br>
+          値引きが発生するのは主に書店主催セールなど、露出が増える形に限られます（割引50%以上は必ず事前確認）。詳しくは <a href="money.html" style="color:var(--primary);font-weight:800;">お金のページ</a> のセール事例へ。
+        </div>
+        <div class="callout info" style="margin:0;">
+          <strong>まとめると</strong><br>
+          「希望は最大限通す・無断値下げしない・でも市場が壊れる極端な安売りだけは当社判断で止める」——この設計です。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === 表紙・白抜き素材の扱い === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">COVER &amp; ASSETS</span>
+      <h2 class="section-title">表紙・白抜き素材の<span class="gradient">扱い</span></h2>
+      <p class="section-lead">弊社が制作する表紙・加工データについての方針です。「使わせない」ではなく「配信用の制作物だから配信用途に限る」という切り分けです。</p>
+    </div>
+
+    <div class="callout info" style="max-width:820px;margin:0 auto 28px;">
+      弊社が各電子書店へ配信するために新規制作する表紙や、白抜き・モザイクなどの加工データは、<strong>書店規格・審査に合わせた配信用の制作物</strong>です。そのため、次のように扱わせていただきます。
+    </div>
+
+    <div class="table-wrap" style="max-width:820px;margin:0 auto;">
+      <table>
+        <tbody>
+          <tr><td>弊社制作の表紙・加工データの著作権</td><td class="mb">弊社に帰属</td></tr>
+          <tr><td>利用の範囲</td><td class="mb">弊社の配信用途に限定</td></tr>
+          <tr><td>FANZA・DLsite・SNS・広告での使用</td><td>対象外（ご希望時は別途相談）</td></tr>
+          <tr><td>文字・レイアウト変更・トリミング等の加工</td><td>不可</td></tr>
+          <tr><td>完成データのお渡し</td><td>原則なし</td></tr>
+          <tr><td>契約終了後</td><td>利用終了</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout ok" style="max-width:820px;margin:28px auto 0;">
+      <strong>作家さんご自身の版は、そのまま続けてOK</strong><br>
+      作家さんがFANZA・DLsite等でご自身で販売している版は、<strong>今の表紙のまま継続</strong>していただけます。弊社の配信用に作った表紙とは別々に運用するイメージなので、作家さんの手元の作品が制限されることはありません。
+    </div>
+  </div>
+</section>
+
+<!-- === よくある変更希望への回答 === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Q&amp;A</span>
+      <h2 class="section-title">契約書について<br>よくいただく<span class="gradient">ご質問・ご要望</span></h2>
+      <p class="section-lead">「この条文はどういう意味？」「ここを変えられる？」——多くいただく点に、運用としてどうお約束しているかをまとめました。</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:30%;">条文・論点</th><th>お約束している運用</th></tr></thead>
+        <tbody>
+          <tr><td><strong>第4条</strong>　還元金・売上明細</td><td>売上明細は<strong>振込月の前月</strong>に、配信ストア別の内訳をスプレッドシートで開示。透明性を持ってお見せします。</td></tr>
+          <tr><td><strong>第5条</strong>　販売価格・セール</td><td><strong>割引50%以上のセール・無料キャンペーンは事前連絡＋参加確認（オプトイン）</strong>。50%未満は売上状況に応じて当社裁量で機動的に対応します。</td></tr>
+          <tr><td><strong>第7条</strong>　利用・改変</td><td>変更時は基本的に事前確認。作品内容は校閲での誤字脱字修正、タイトルは書店レギュレーション対応の一部伏字など。<strong>40ページ以上は10ページ1話の話数売り</strong>が基本、モザイク処理は当社対応で公開まで入稿します。</td></tr>
+          <tr><td><strong>第10条</strong>　配信の中止・終了</td><td>当社都合での配信終了は基本ありません。作家さんからの停止希望に対応します（最低配信期間中の停止は別途相談）。</td></tr>
+          <tr><td><strong>第15条</strong>　契約終了後</td><td>契約終了後、<strong>おおむね2ヶ月で各書店での配信終了</strong>となります。</td></tr>
+          <tr><td><strong>インボイス</strong></td><td>未登録でも契約・配信は可能です。登録がない期間は経過措置により消費税相当分の一部を控除します（登録後は控除なし）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout info">上記は「契約書の文面を変えずに、運用でこうお約束します」という説明です。文面そのものの修正をご希望の場合は、個別版でのご相談も承ります。</div>
+  </div>
+</section>
+
+<!-- === 契約書全文 === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">FULL TEXT</span>
+      <h2 class="section-title">契約書<span class="gradient">全文</span></h2>
+      <p class="section-lead">実際に締結いただく契約書の全文です（電子出版物配信取次に関する業務委託契約書・還元率60%版）。締結はマネーフォワードの電子契約で後日行います。</p>
+    </div>
+
+    <div class="contract-doc">
+      <div class="doc-title">電子出版物配信取次に関する業務委託契約書</div>
+      <p class="doc-intro">　（以下「甲」といいます。）と、合同会社Ｒｅａｌｉｚｅ（以下「乙」といいます。）は、甲が乙に提供した電子出版物の配信取次を乙に業務委託することに関し、次の通り契約（以下「本契約」といいます。）を締結します。</p>
+
+      <div class="contract-article">
+        <div class="art-sub">第1条</div>
+        <h4>電子出版物配信取次に関する業務委託</h4>
+        <p>1　甲は、第2項で規定する本電子出版物について、第3項で規定する本業務を乙に委託し、乙はこれを受託するものとします。</p>
+        <p>2　本契約において本電子出版物とは、本契約期間中に、甲が乙に対し、電子メール又はＳＮＳの投稿文等に記述する方法（具体的な方法は乙が指定します。）により、甲から乙に提供されたデータファイルに記録される、漫画作品、小説、写真集、イラスト集その他の電子出版物のうち、乙が本業務の対象とすることを承諾した電子出版物をいいます。</p>
+        <p>3　本契約において本業務とは、次の各号に掲げる業務をいいます。</p>
+        <ol>
+          <li>コミックシーモア、LINEマンガ、Kindle、ebookjapan、ブックライブなどの電子出版物配信ストア（以下「配信ストア」といいます。）を運営する事業者（以下「本配信事業者」といいます。）、又は、配信ストアに電子出版物の配信を委託する事業者（以下「本配信委託事業者」といいます。）に対して、本電子出版物に係る配信を委託し、本使用料を受領する、本電子出版物配信取次業務。</li>
+          <li>本電子出版物の配信、販売、販売促進、広告宣伝、配信ストア又は本配信委託事業者の規約・審査基準・技術仕様への対応、書誌情報の作成・修正、販売形態に応じた編集・分割・結合業務。</li>
+          <li>その他、前号に付随する業務。</li>
+        </ol>
+        <p>4　本電子出版物の配信の可否は、それぞれの配信ストアの審査により決することから、甲は、本電子出版物が配信されることを乙が何ら保証するものではないことを、承諾します。</p>
+        <p>5　乙は、本電子出版物を配信する配信ストアを選択し、本電子出版物の配信開始日を決定できるものとし、甲はこの選択及び決定に異議を述べないものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第2条</div>
+        <h4>作品の提供・承認</h4>
+        <p>1　本契約に定める本電子出版物の甲から乙への提供は、甲が乙に対し電子メール等の書面により作品データおよび関連情報を通知し、乙が書面により受領・承認の意思表示をした時点で成立するものとします。</p>
+        <p>2　前項の承認後、甲は乙の書面による同意なく当該作品の提供を撤回することはできないものとします。</p>
+        <p>3　前項にかかわらず、乙が承認から90日以内に配信準備作業（EPUB制作、書誌情報入力、書店への配信許諾申請のいずれか）に着手しない場合は、甲は書面により作品提供を撤回することができるものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第2条の2</div>
+        <h4>甲の協力義務</h4>
+        <p>1　本電子出版物の甲から乙への提供がされた後、乙が本電子出版物の配信準備その他本業務の遂行に必要な事項（書誌情報、表紙、奥付、配信ストアの選定、年齢制限区分、配信開始日その他配信に必要な確認事項を含む。）について甲に対し連絡を行った場合、甲は、当該連絡を受領した日から7日以内に乙に回答するものとします。「回答」とは、乙の連絡内容に対する承認、拒否又は具体的な修正の意思表示をいい、単なる受領確認、検討中である旨その他結論を留保する意思表示はこれを含みません。</p>
+        <p>2　甲が前項に定める期間内に回答しない場合、乙は甲に対し再度回答を促すものとし、当該再度の催告から3日以内になお回答がないときは、甲が乙に対し本電子出版物の配信に必要な手続を進めることを委ねたものとみなします。この場合、乙は自らの判断で配信に必要な手続を進めることができ、甲は乙の決定に異議を述べることができないものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第3条</div>
+        <h4>生成ＡＩ利用の有無の申告</h4>
+        <p>甲は、本業務の対象とすることを希望する電子出版物が生成ＡＩを利用して制作された内容を含む場合は、当該電子出版物を記録するデータファイルを乙に提供するときに、その旨を乙に申告するものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第4条</div>
+        <h4>還元金</h4>
+        <p>1　乙は、本配信事業者及び本配信委託事業者から受領する本使用料から、乙の本業務に係る業務委託料40％（税込み）を差し引き、本使用料の金額に60％の割合を乗じて計算する金額に相当する金員（以下「還元金」といいます。）を甲に支払うものとします。</p>
+        <p>2　乙は、四半期毎（7月、10月、1月、4月各末日締切）に還元金の金額を計算し、各四半期末の翌月末日に当該金額を甲に通知し、各四半期末から起算して4ヶ月後の末日に甲が別途指定する銀行口座に振り込む方法にて支払うものとします。なお、振込手数料は乙が負担するものとします。</p>
+        <p>3　乙は四半期毎の還元金の金額が金1万円未満の場合、翌四半期に繰り越して支払うことができるものとします。</p>
+        <p>4　甲が個人口座を支払先として指定する場合、乙は還元金の支払いに際し、所得税法その他関係法令に基づく源泉徴収を行い、源泉徴収税額を控除した金額を甲に支払うものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第4条の2</div>
+        <h4>消費税および適格請求書発行事業者</h4>
+        <p>1　前条に基づき乙が甲に支払う還元金の金額には、消費税及び地方消費税（以下「消費税等」といいます。）相当額を含むものとします。</p>
+        <p>2　甲は、適格請求書発行事業者の登録の有無、登録番号、及び登録状況の変更について、乙に対し速やかに通知するものとします。</p>
+        <p>3　甲が適格請求書発行事業者でない場合、乙は、還元金の金額のうち、経過措置により乙が仕入税額控除を受けられない部分の消費税等相当額を、当該支払額から減額して支払うことができるものとします。減額の割合は、消費税法等の経過措置に従います。</p>
+        <p>4　甲が本契約期間中に適格請求書発行事業者の登録を受けた場合、登録番号を乙に通知した日の属する四半期の翌四半期分の支払いから、前項の減額を停止します。</p>
+        <p>5　乙は、還元金の支払いに関し、仕入明細書（以下「支払通知書」といいます。）を作成し、甲に交付します。</p>
+        <p>6　甲は、支払通知書の記載内容に異議がある場合、受領後14日以内に乙に通知するものとします。当該期間内に異議の通知がない場合、甲は記載内容を承諾したものとみなします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第5条</div>
+        <h4>販売価格</h4>
+        <p>1　配信ストアにおける本電子出版物の販売価格は、乙が決定します。</p>
+        <p>2　乙は、配信ストアにおけるセール販売等に対応する場合、販売状況の改善などの必要がある場合、本電子出版物の販売価格を変更することができるものとします。</p>
+        <p>3　乙は、事前に甲に対して販売価格の目安等を示す場合がありますが、当該販売価格は目安に過ぎず、拘束されないものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第6条</div>
+        <h4>表紙、奥付</h4>
+        <p>1　甲は、本電子出版物の配信に必要な、表紙及び奥付（以下「本表紙等」といいます。）に関するデータファイルを作成し、乙に提供するものとします。</p>
+        <p>2　前項にかかわらず、甲は、本表紙等、及び本表紙等データファイルの作成を乙に委託することができます。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第7条</div>
+        <h4>電子出版物に係る著作物等の利用等</h4>
+        <p>1　本電子出版物の配信を行うために必要な範囲（販売促進を目的とする場合も含みます。）において、甲は、乙、本配信事業者及び本配信委託事業者が本著作物を利用及び改変すること、及び本電子出版物の題号を改変することを許諾します。</p>
+        <p>2　配信に必要な基準及び規格に適合させるために必要な範囲において、乙は、甲の許諾を得ることなく、本電子出版物のデータファイル及び本表紙等データファイルを修正及び改変することができるものとします。</p>
+        <p>3　乙は、甲の個別の承諾を得ることなく、次の各号に定める行為を行うことができるものとします。</p>
+        <ol>
+          <li>規約・審査基準・技術仕様に適合させるための、トリミング、リサイズ、形式変換、画質調整、文字情報の修正、奥付・書誌情報の追加又は修正その他の技術的・形式的修正。</li>
+          <li>規約・審査基準・法令上の要請に対応するための、白塗り、黒塗り、モザイク処理、ぼかし処理、切除、差替えその他これらに類する修正。</li>
+          <li>単話販売、巻単位販売、話数分割販売、合本版、分冊版、試し読み版、サンプル版その他販売形態に応じた編集、分割、結合又は再構成。</li>
+          <li>販売促進・広告宣伝のための、紹介画像、バナー、サムネイル、試し読み、告知文、広告素材その他の販促素材としての利用。</li>
+          <li>前各号に付随し又は関連する一切の行為。</li>
+        </ol>
+        <p>4　前項に基づく修正等は、本業務の遂行・販売促進・規約対応その他合理的な必要性がある範囲で行うものとし、乙は、本電子出版物の内容又は著作者の名誉若しくは声望を不当に害する態様でこれを行わないものとします。</p>
+        <p>5　甲は、本条に基づく利用等について、著作者人格権を行使せず、また著作者が甲以外に存在する場合には、当該著作者をして著作者人格権を行使させないものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第8条</div>
+        <h4>保証</h4>
+        <p>1　甲は、本著作物に係る著作権（著作権法第27条及び第28条に規定する権利を含みます。）など、本契約を締結するに必要な一切の権利及び権限を有することを保証します。</p>
+        <p>2　甲は、本電子出版物の内容が、第三者の著作権、商標権、プライバシー権、名誉権、パブリシティ権その他いかなる権利をも侵害しないことを保証します。</p>
+        <p>3　甲は、本電子出版物が法令に違反する内容を含まないことを保証します。</p>
+        <p>4　万一、本電子出版物に関して第三者から権利の主張・異議・苦情・損害賠償請求等（以下「紛争等」といいます。）がなされた場合、甲は、紛争等が乙の責めに帰すべき事由である場合を除き、訴訟費用を含むすべての費用を負担して責任をもって対処・解決するものとし、乙に迷惑及び損害をかけないものとします。この場合、甲は対処・解決方法を乙と事前に合意のうえ対応し、進捗を乙に連絡します。</p>
+        <p>5　甲は、乙が第7条に基づき利用等を行うことについて、第三者の権利を侵害せず、甲以外の著作者・共同著作者・原作者・作画担当者・出版社その他権利者から異議を受けないために必要な権利及び権限を有していることを保証します。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第9条</div>
+        <h4>著作者人格権</h4>
+        <p>1　甲は、本著作物に係る著作者人格権を行使せず、また著作者が甲の他にいる場合、当該著作者に行使させないことを保証します。</p>
+        <p>2　前項にかかわらず、乙が甲に対し当該著作者人格権の行使を要請した場合、甲は、当該著作者がこれに応じることを保証します。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第10条</div>
+        <h4>配信の中止又は終了</h4>
+        <p>1　甲は、本電子出版物の配信が、乙、本配信事業者又は本配信委託事業者の都合により、甲の承諾を得ることなく中止又は終了する場合があることを承諾します。</p>
+        <p>2　甲は、最低配信期間中、甲の都合による本電子出版物の配信の停止を求めることができません。最低配信期間は、当該本電子出版物の配信の開始日から1年間とします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第11条</div>
+        <h4>取次独占・禁止事項</h4>
+        <p>甲は、乙に提供し乙が承諾した本電子出版物（以下「本作品」といいます。）について、本契約の有効期間中、乙以外の取次事業者を通じて配信ストアに対する配信許諾を行わず、また、本作品が配信された後においても、自ら又は乙以外の事業者を介して、同一の配信ストアに対して同一の内容の電子出版物の配信を委託してはならないものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第12条</div>
+        <h4>権利・義務の移転</h4>
+        <p>甲及び乙は、本契約に基づき相手方に対して有する権利又は負う義務の全部又は一部を、第三者に譲渡し、承継させ、又は担保に供してはならないものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第13条</div>
+        <h4>守秘義務</h4>
+        <p>1　甲及び乙は、本契約の存在及び内容、並びに本業務の遂行において相手方から提供又は開示された一切の情報（原稿、ネーム、未公開資料、作画素材、生成ＡＩ用プロンプト・ワークフロー・シード値その他の生成パラメータ等を含む。以下「秘密情報」といいます。）を、第三者に開示・漏洩・提供してはならず、本業務の遂行以外の目的に使用してはならないものとします。ただし、①本配信事業者・本配信委託事業者への業務上必要な開示、②税理士・公認会計士・弁護士その他専門家への業務上必要な範囲での相談、③法令上必要な開示は例外とします。</p>
+        <p>2　乙は、秘密情報を、乙又は第三者の生成ＡＩの学習データ、データセット、その他本業務の遂行以外の目的に使用してはならないものとします。</p>
+        <p>3　本契約終了後又は本作品の配信終了後、相手方から要請があった場合、当事者は合理的な範囲で秘密情報を記録したデータを削除し、その完了を通知します。ただし、社内規程に基づくバックアップ、システムログ、法令上保存義務のあるデータはこの限りではありません。</p>
+        <p>4　本条の義務は、本契約終了後又は本作品の配信終了後、いずれか遅い日から5年間存続します。</p>
+        <p>5　当事者が本条に故意又は重過失により違反した場合、相手方は催告の上、本契約を解除でき、違反者は相手方に対し当該違反により現実に生じた直接損害を賠償するものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第14条</div>
+        <h4>反社会的勢力排除</h4>
+        <p>1　甲及び乙は、自らが反社会的勢力でないこと、反社会的勢力を利用しないこと、反社会的勢力を名乗るなどして相手方の名誉・信用を毀損し又は業務妨害・不当要求を行わないこと、及び自らの主要な出資者又は役職員が反社会的勢力の構成員でないことを表明・保証します。</p>
+        <p>2　甲又は乙が本条に定める義務に違反した場合、相手方は催告その他何らの手続きを要することなく、直ちに本契約の全部又は一部を解除することができます。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第15条</div>
+        <h4>契約期間</h4>
+        <p>1　本契約の期間は、本契約締結日以後1年間とし、期間終了の3ヶ月前までに、甲乙いずれからも契約更新拒絶の意思表示がない場合は、同一条件により更に1年間契約は更新されたものとし、その後も同様とします。</p>
+        <p>2　前項にかかわらず、本契約締結日から1年を経過した場合、甲は、3ヶ月前に乙に対し書面で通知することにより、本契約を解約することができます。</p>
+        <p>3　第1項にかかわらず、乙は、自らの事情により本業務に係るサービスを中止又は終了したときは、本契約を解約することができます。</p>
+        <p>4　契約期間の終了にかかわらず、終了日の時点で配信済みの本電子出版物のうち、最低配信期間経過前のものについては、別途の書面による合意がある場合を除き、最低配信期間が経過するまで、当該本電子出版物に関してのみ本契約の条件が引き続き適用されます。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第16条</div>
+        <h4>契約終了後の措置</h4>
+        <p>本契約終了後においても、以下の各条項の定めは、なお有効に存続するものとします。第8条（保証）／第10条（配信の中止又は終了）／第13条（守秘義務）／第14条（反社会的勢力排除）／本条（契約終了後の措置）／第18条（裁判管轄）。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第17条</div>
+        <h4>規定外事項</h4>
+        <p>1　本契約に定めのない事項若しくは疑義が生じた場合、甲、乙誠意をもって協議し、解決するものとします。</p>
+        <p>2　本契約締結後における消費税法その他関連法令の改正により、本契約の内容に重大な影響が生じた場合、甲及び乙は、契約内容の変更について誠実に協議するものとします。</p>
+      </div>
+
+      <div class="contract-article">
+        <div class="art-sub">第18条</div>
+        <h4>裁判管轄</h4>
+        <p>前条の協議にもかかわらず、本契約に関し甲乙間に紛争が発生した場合には、東京地方裁判所又は東京簡易裁判所を第一審の専属的合意管轄裁判所とします。</p>
+      </div>
+
+      <p class="doc-note">本契約の成立を証するため、本書の電磁的記録を作成し、甲乙合意の後電子署名を施し、各自その電磁的記録を保管します。<br>乙：東京都渋谷区宇田川町34番5号 サイトービルⅢ5階　合同会社Ｒｅａｌｉｚｅ　代表社員　竹内 星陽</p>
+    </div>
+    <p class="doc-note" style="text-align:center;">※ これは還元率60%版の標準契約書です。実際の締結は、後日マネーフォワードの電子契約でメール送付します。ご不明点はいつでもご相談ください。</p>
+
+    <div style="text-align:center; margin-top:44px;">
+      <a href="flow.html" class="btn-primary">契約〜配信までの流れを見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="logo-mark">MB</span>MANGA BUFF</div>
+        <p class="footer-tagline">個人作家・同人サークルの作品を、100以上の電子書店へ一括配信する取次サービス。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>サービス</h5>
+          <a href="service.html">サービス内容</a>
+          <a href="money.html">料金・還元率</a>
+          <a href="flow.html">ご相談後の流れ</a>
+        </div>
+        <div class="footer-col">
+          <h5>詳しく知る</h5>
+          <a href="contract.html">契約について</a>
+          <a href="faq.html">よくある質問</a>
+          <a href="about.html">代表とMANGA BUFF</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-meta">漫画家のための電子書店一括配信サービス　|　運営：合同会社Realize　|　© 2026 MANGA BUFF</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

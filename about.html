@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>代表とMANGA BUFF ｜ MANGA BUFF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="gate-style">
+  body.locked { overflow: hidden; }
+  body.locked > *:not(#gate) { display: none !important; }
+  #gate { position: fixed; inset: 0; background: #1A1A2E; z-index: 99999; display: flex; align-items: center; justify-content: center; font-family: "Noto Sans JP", sans-serif; color: white; padding: 24px; }
+  #gate.hidden { display: none; }
+  .gate-card { background: white; color: #1A1A2E; padding: 48px 40px; border-radius: 24px; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .gate-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 16px; margin-bottom: 28px; }
+  .gate-brand .mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #FF6B35, #FFB627); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; }
+  #gate h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.01em; }
+  #gate p { font-size: 14px; color: #6B6B6B; margin-bottom: 24px; font-weight: 500; line-height: 1.7; }
+  #gate input { width: 100%; padding: 14px 18px; border: 1px solid #E8E5E0; border-radius: 12px; font-size: 15px; font-weight: 600; font-family: inherit; margin-bottom: 12px; outline: none; transition: all 0.15s; }
+  #gate input:focus { border-color: #FF6B35; box-shadow: 0 0 0 3px rgba(255,107,53,0.15); }
+  #gate button { width: 100%; padding: 14px; background: #FF6B35; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  #gate button:hover { background: #E8541F; }
+  #gate .err { color: #FF4757; font-size: 13px; margin-top: 8px; font-weight: 600; display: none; }
+  #gate .err.show { display: block; }
+</style>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand"><span class="mark">MB</span>MANGA BUFF</div>
+    <h2>限定プレビュー</h2>
+    <p>このページは招待制の作家向け資料です。アクセスコードを入力してください。</p>
+    <input type="password" id="gate-pw" placeholder="アクセスコード" autocomplete="off" />
+    <button id="gate-btn">閲覧する →</button>
+    <div class="err" id="gate-err">アクセスコードが正しくありません。</div>
+  </div>
+</div>
+<script>if(sessionStorage.getItem('mb-unlocked')==='1'){document.body.classList.remove('locked');var g=document.getElementById('gate');if(g)g.classList.add('hidden');}</script>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">MB</span>MANGA BUFF</a>
+    <button class="nav-toggle" aria-label="メニュー"><span></span></button>
+    <ul class="nav-menu">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="service.html">サービス内容</a></li>
+      <li><a href="money.html">料金・お金</a></li>
+      <li><a href="contract.html">契約について</a></li>
+      <li><a href="flow.html">ご相談後の流れ</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="about.html">代表の想い</a></li>
+    </ul>
+    <a href="flow.html" class="nav-cta">相談してみる</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">ABOUT</span>
+    <h1>代表とMANGA BUFF</h1>
+    <p>なぜこのサービスを作ったのか。そして、実際に参加いただいている作家さんの声。「誰がやっているサービスなのか」が見えると、安心して作品を預けられると思うので、正直にお伝えします。</p>
+  </div>
+</div>
+
+<!-- === 立ち上げ背景・代表の想い === -->
+<section>
+  <div class="container-narrow">
+    <div class="section-head left">
+      <span class="section-label">OUR STORY</span>
+      <h2 class="section-title">「作り手が困っていたこと」から<br>作ったサービスです。</h2>
+    </div>
+    <div style="font-size:16px; line-height:2.05; color:var(--ink-soft); font-weight:500;">
+      <p style="margin-bottom:20px;">MANGA BUFF を運営する合同会社Realize代表の竹内は、もともと自分自身が作品を出していた一人の作り手でした。だからこそ、作家さんがぶつかる壁を身をもって知っています。</p>
+      <p style="margin-bottom:20px;">「良い作品を描いても、個人では商業の電子書店に全部は出せない」「同人プラットフォームだけだと、読者がある所で頭打ちになる」「従来の取次に出しても、結局自分の手元にいくら残るのか分からない」——この3つは、作り手なら誰もが感じる悩みだと思います。</p>
+      <p style="margin-bottom:20px;">MANGA BUFF は、その悩みを<strong>作り手の側から解決するために作ったサービス</strong>です。書店交渉・EPUB制作・書誌入力・表紙・モザイク処理・売上管理まで全部こちらで巻き取り、作家さんには「制作に集中できる時間」と「業界の1.5倍の手取り」を残す。売り込みではなく、同じ作り手として「一緒に棚を育てましょう」という姿勢でやっています。</p>
+      <div class="callout info" style="margin-top:28px;">数字を盛ったり、「すぐ売れます」と調子のいいことは言いません。FANZA同人ほどは売れないことも、支払いが4ヶ月後になる業界構造も、正直にお伝えした上で判断していただきたいと考えています。</div>
+    </div>
+  </div>
+</section>
+
+<!-- === 竹内note ===
+     TODO(URL待ち): 竹内さんのnote URL到着後、以下の note-grid を実データに差し替え。
+     account_url と各記事の href / タイトル / 一言 を埋める。 -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">NOTE</span>
+      <h2 class="section-title">代表の<span class="gradient">note</span></h2>
+      <p class="section-lead">代表の竹内は、note「竹内星陽＠MANGA BUFF 中の人」で、電子出版・AI漫画・配信のリアルを実データで発信しています。<br>「つくる人の想いを、正しく読者へ届けたい。」——どんな人がやっているサービスか、ここを読むと伝わると思います。</p>
+    </div>
+
+    <div class="note-grid">
+      <a href="https://note.com/sei_manga_buff/n/n60cf9b1dd14b" class="note-card" target="_blank" rel="noopener">
+        <div class="note-tag">AI・販路</div>
+        <h3>AI漫画は"売れない"んじゃない。"並べてもらえない"だけだ。</h3>
+        <p>「AI作品は売れない」の正体は、書店の棚に"並べてもらえない"こと。AIフロア隔離の構造と、その抜け道を実データで解説した回。</p>
+        <span class="note-go">noteで読む</span>
+      </a>
+      <a href="https://note.com/sei_manga_buff/n/n0e41eaaf8b2e" class="note-card" target="_blank" rel="noopener">
+        <div class="note-tag">価格設計</div>
+        <h3>【いくらで売るのが正解か】新作2,000作を値段別に数えたら…</h3>
+        <p>「売れる本数」と「稼げる金額」で最適価格が逆転する。2,000作の実データから価格の付け方を掘り下げた、値付けに悩む作家さん必読の回。</p>
+        <span class="note-go">noteで読む</span>
+      </a>
+      <a href="https://note.com/sei_manga_buff/n/n07193fec7f5c" class="note-card" target="_blank" rel="noopener">
+        <div class="note-tag">配信網</div>
+        <h3>【配信網の地図】"電子書店100超"って、具体的にどこ？</h3>
+        <p>「100書店に配信」と言われても実感が湧かない——作品が実際に届く配信網を、書店ごとに1つずつ地図にした解説記事。</p>
+        <span class="note-go">noteで読む</span>
+      </a>
+    </div>
+
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://note.com/sei_manga_buff" class="btn-secondary" target="_blank" rel="noopener">竹内のnoteをもっと見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- === 作家の声 ===
+     TODO(URL待ち): 表向きホームページURL到着後、パビュ / スペルト小麦 の口コミを
+     このホームページから正確に転記して以下の voice を差し替え。 -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">VOICES</span>
+      <h2 class="section-title">参加作家さんの<span class="gradient">生の声</span></h2>
+      <p class="section-lead">実際に MANGA BUFF に作品を預けてくださっている作家さんからの声です。</p>
+    </div>
+
+    <div class="voice-grid">
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-body" style="font-size:15px; color:var(--ink); font-weight:600;">原稿データを渡したら、色んな書店で配信されるところまで進めてもらえて助かりました。公開まで早かったのもありがたかったです。</div>
+        <div class="voice-author"><strong>ぱびゅ さん</strong><br>X：@pabyu235852</div>
+      </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-body" style="font-size:15px; color:var(--ink); font-weight:600;">AI作品なので販路を広げるのは難しいと思っていましたが、ほとんど丸投げで広げることができ、ありがたく思います。</div>
+        <div class="voice-author"><strong>すぺると小麦 さん</strong><br>X：@superutokomugi</div>
+      </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-body" style="font-size:15px; color:var(--ink); font-weight:600;">書店への配信や面倒な手続きを全部おまかせできるので、制作に集中できるようになりました。作家としは本当に助かっています。</div>
+        <div class="voice-author"><strong>ぜっぺい さん</strong><br>X：@zeppei_</div>
+      </div>
+    </div>
+
+    <h3 class="block-title" style="text-align:center;">その他の作家さんからの反応</h3>
+    <div class="voice-grid">
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">FANZA同人以外の流通が欲しかった</div>
+        <div class="voice-author">個人サークル運営・手書き作家さん<br>複数書店展開で新規読者層へのリーチを実現</div>
+      </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">他社より連絡が速くて、やりやすい</div>
+        <div class="voice-author">他取次から乗り換えのサークルさん<br>レスポンスの速さ・配信スピードが乗り換えの決め手に</div>
+      </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">AI作品を扱ってくれる取次が少ない</div>
+        <div class="voice-author">AI漫画制作サークルさん<br>公式対応＋AI作品専用の配信先選定で差別化</div>
+      </div>
+      <div class="voice">
+        <div class="voice-quote-mark">"</div>
+        <div class="voice-quote">既存取次の還元率に納得がいかなかった</div>
+        <div class="voice-author">複数作品保有サークルさん<br>60%還元への切り替えで手取り1.5倍を実現見込み</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === CTA === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="cta-band">
+      <h2>あなたの作品も、一緒に届けさせてください。</h2>
+      <p>まずは1作品から。気になったことは何でも担当者に聞いてください。同じ作り手として、正直にお答えします。</p>
+      <a href="flow.html" class="btn-primary" style="background:var(--primary); box-shadow:0 8px 24px rgba(255,107,53,0.4);">ご相談後の流れを見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="logo-mark">MB</span>MANGA BUFF</div>
+        <p class="footer-tagline">個人作家・同人サークルの作品を、100以上の電子書店へ一括配信する取次サービス。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>サービス</h5>
+          <a href="service.html">サービス内容</a>
+          <a href="money.html">料金・還元率</a>
+          <a href="flow.html">ご相談後の流れ</a>
+        </div>
+        <div class="footer-col">
+          <h5>詳しく知る</h5>
+          <a href="contract.html">契約について</a>
+          <a href="faq.html">よくある質問</a>
+          <a href="about.html">代表とMANGA BUFF</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-meta">漫画家のための電子書店一括配信サービス　|　運営：合同会社Realize　|　© 2026 MANGA BUFF</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

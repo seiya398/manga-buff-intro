@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>サービス内容・作品データ納品方法 ｜ MANGA BUFF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="gate-style">
+  body.locked { overflow: hidden; }
+  body.locked > *:not(#gate) { display: none !important; }
+  #gate { position: fixed; inset: 0; background: #1A1A2E; z-index: 99999; display: flex; align-items: center; justify-content: center; font-family: "Noto Sans JP", sans-serif; color: white; padding: 24px; }
+  #gate.hidden { display: none; }
+  .gate-card { background: white; color: #1A1A2E; padding: 48px 40px; border-radius: 24px; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .gate-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 16px; margin-bottom: 28px; }
+  .gate-brand .mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #FF6B35, #FFB627); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; }
+  #gate h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.01em; }
+  #gate p { font-size: 14px; color: #6B6B6B; margin-bottom: 24px; font-weight: 500; line-height: 1.7; }
+  #gate input { width: 100%; padding: 14px 18px; border: 1px solid #E8E5E0; border-radius: 12px; font-size: 15px; font-weight: 600; font-family: inherit; margin-bottom: 12px; outline: none; transition: all 0.15s; }
+  #gate input:focus { border-color: #FF6B35; box-shadow: 0 0 0 3px rgba(255,107,53,0.15); }
+  #gate button { width: 100%; padding: 14px; background: #FF6B35; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  #gate button:hover { background: #E8541F; }
+  #gate .err { color: #FF4757; font-size: 13px; margin-top: 8px; font-weight: 600; display: none; }
+  #gate .err.show { display: block; }
+</style>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand"><span class="mark">MB</span>MANGA BUFF</div>
+    <h2>限定プレビュー</h2>
+    <p>このページは招待制の作家向け資料です。アクセスコードを入力してください。</p>
+    <input type="password" id="gate-pw" placeholder="アクセスコード" autocomplete="off" />
+    <button id="gate-btn">閲覧する →</button>
+    <div class="err" id="gate-err">アクセスコードが正しくありません。</div>
+  </div>
+</div>
+<script>if(sessionStorage.getItem('mb-unlocked')==='1'){document.body.classList.remove('locked');var g=document.getElementById('gate');if(g)g.classList.add('hidden');}</script>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">MB</span>MANGA BUFF</a>
+    <button class="nav-toggle" aria-label="メニュー"><span></span></button>
+    <ul class="nav-menu">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="service.html">サービス内容</a></li>
+      <li><a href="money.html">料金・お金</a></li>
+      <li><a href="contract.html">契約について</a></li>
+      <li><a href="flow.html">ご相談後の流れ</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="about.html">代表の想い</a></li>
+    </ul>
+    <a href="flow.html" class="nav-cta">相談してみる</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">SERVICE</span>
+    <h1>サービス内容と、<br>作品データの納品方法</h1>
+    <p>MANGA BUFF が何を代行するか、作家さんに用意いただくもの、そして作品データをどう渡していただくか。ここを読めば「あとは渡すだけ」が分かります。</p>
+  </div>
+</div>
+
+<!-- === 何を代行するか === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">WHAT WE DO</span>
+      <h2 class="section-title">作家さんは渡すだけ。<br><span class="gradient">残りは全部</span>お任せください。</h2>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-card"><div class="solution-icon">🛠</div><h3>全部代行</h3><p>書店交渉・EPUB制作・書誌入力・表紙デザインまで対応。作家さんの手間はゼロ。</p></div>
+      <div class="solution-card"><div class="solution-icon">🏪</div><h3>100書店へ一括</h3><p>コミックシーモア・LINEマンガ・Kindle・楽天Kobo等の主要書店＋100書店へ。</p></div>
+      <div class="solution-card"><div class="solution-icon">💰</div><h3>還元率60%</h3><p>業界水準40%前後に対してMANGA BUFFは60%。業界の1.5倍の手取り。</p></div>
+      <div class="solution-card"><div class="solution-icon">🎨</div><h3>AI作品も公式対応</h3><p>AI生成作品も対応。申告いただければ適切な書店を選定して配信します。</p></div>
+      <div class="solution-card"><div class="solution-icon">💬</div><h3>Discordで密に伴走</h3><p>作家さんごとに専用チャンネル。連絡もレスポンスも速く、月1回の売上共有MTGも実施。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- === ご用意いただくもの／弊社対応 === -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">DELIVERABLES</span>
+      <h2 class="section-title">ご用意いただくもの／弊社対応</h2>
+      <p class="section-lead">作家さんに必要なのは本編データと作品情報のみ。追加費用は一切かかりません。</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="col-label">YOUR SIDE</div>
+        <h3 class="col-title">作家さんにご用意いただくもの</h3>
+        <ul class="feature-list">
+          <li>本編データ（CLIP、PSD、JPG、PDF 等）</li>
+          <li>作品タイトル・あらすじ</li>
+          <li>著作権の表明（他社取次で配信中でないこと）</li>
+          <li>表紙用キャラクターデータ（弊社で表紙を制作）</li>
+          <li>SNS ID（X等、奥付に記載用・任意）</li>
+        </ul>
+      </div>
+      <div>
+        <div class="col-label">OUR SIDE</div>
+        <h3 class="col-title">MANGA BUFF が対応すること</h3>
+        <ul class="feature-list">
+          <li>EPUB形式への変換（技術的な最適化含む）</li>
+          <li>表紙・奥付のデザイン（追加費用なし）</li>
+          <li>書誌情報の書店フォーマット変換</li>
+          <li>各書店への配信許諾交渉</li>
+          <li>白抜き・モザイク処理対応</li>
+          <li>セール対応・販促連携</li>
+          <li>売上データの収集・作家さんへの報告</li>
+          <li>書店からの問い合わせ一次対応</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hl-box">
+      <strong>業務委託料40%にすべて含まれます</strong>
+      <p>追加費用は一切かかりません。売上が発生した時だけ、売上の一部から運営費を頂戴する完全成果報酬型です。表紙を作って売れなくても、費用を請求することはありません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- === 作品データ納品方法 === -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">HOW TO SUBMIT</span>
+      <h2 class="section-title">作品データの<span class="gradient">納品方法</span></h2>
+      <p class="section-lead">「どんな形式で、どうやって渡せばいい？」——ここでお答えします。難しい変換や書き出しは不要です。</p>
+    </div>
+
+    <h3 class="block-title">① 対応しているデータ形式</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>種類</th><th>対応形式</th><th>備考</th></tr></thead>
+        <tbody>
+          <tr><td>本編（原稿）</td><td class="mb">CLIP STUDIO / PSD / JPG / PNG / PDF</td><td>お手元にある形式のままでOK。書き出し直し不要</td></tr>
+          <tr><td>表紙</td><td class="mb">キャラクター素材（PSD/PNG/JPG）</td><td>表紙そのものは弊社で制作。素材データをいただければ十分</td></tr>
+          <tr><td>作品情報</td><td class="mb">テキスト（タイトル・あらすじ・タグ）</td><td>Discord/メールにそのまま貼っていただくだけ</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout info">形式に迷ったら、まずお手元のファイルをそのまま送ってください。<strong>こちらで最適な形式を判断して調整します</strong>ので、作家さん側で書店ごとの仕様を気にする必要はありません。</div>
+
+    <h3 class="block-title">② データの渡し方</h3>
+    <div class="flow-grid">
+      <div class="flow-step">
+        <div class="flow-step-label">STEP 01</div>
+        <h3>専用チャンネルを用意</h3>
+        <p>契約後、作家さんごとにDiscordの専用チャンネルを作成します（Discordが苦手な方はメールでもOK）。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-label">STEP 02</div>
+        <h3>データをアップ</h3>
+        <p>ファイル容量が大きい場合はギガファイル便などの大容量便のリンクでも受け取れます。分割送付も歓迎。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-label">STEP 03</div>
+        <h3>作品情報を添える</h3>
+        <p>タイトル・あらすじ・年齢区分・AI使用の有無を一言添えていただければ受領完了です。</p>
+      </div>
+    </div>
+
+    <h3 class="block-title">③ ページ数・販売単位について</h3>
+    <div class="callout info">
+      電子書店は「1作品＝1商品」で販売する構造です。目安として <strong>40ページ以上のボリューム作品は、10ページ＝1話などの「話数売り」</strong> にして販売することがあります（そのほうが読者が手に取りやすく、売上も伸びやすいため）。分割の仕方は弊社で設計し、事前にご相談します。総集編は個別相談、おまけ単独は本編組み込みでの対応となります。
+    </div>
+
+    <h3 class="block-title">④ モザイク・白抜きなどの調整</h3>
+    <div class="callout ok">
+      成人向け作品のモザイク処理・白抜き対応は、<strong>すべて弊社側で行います</strong>（追加費用なし）。書店ごとに審査基準が違うため、複数パターンを用意して各書店の公開まで対応します。作家さんが書店仕様に合わせて描き直す必要はありません。
+    </div>
+
+    <div style="text-align:center; margin-top:44px;">
+      <a href="flow.html" class="btn-primary">このあとの流れを見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="logo-mark">MB</span>MANGA BUFF</div>
+        <p class="footer-tagline">個人作家・同人サークルの作品を、100以上の電子書店へ一括配信する取次サービス。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>サービス</h5>
+          <a href="service.html">サービス内容</a>
+          <a href="money.html">料金・還元率</a>
+          <a href="flow.html">ご相談後の流れ</a>
+        </div>
+        <div class="footer-col">
+          <h5>詳しく知る</h5>
+          <a href="contract.html">契約について</a>
+          <a href="faq.html">よくある質問</a>
+          <a href="about.html">代表とMANGA BUFF</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-meta">漫画家のための電子書店一括配信サービス　|　運営：合同会社Realize　|　© 2026 MANGA BUFF</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

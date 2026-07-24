@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>ご相談後の流れ ｜ MANGA BUFF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="gate-style">
+  body.locked { overflow: hidden; }
+  body.locked > *:not(#gate) { display: none !important; }
+  #gate { position: fixed; inset: 0; background: #1A1A2E; z-index: 99999; display: flex; align-items: center; justify-content: center; font-family: "Noto Sans JP", sans-serif; color: white; padding: 24px; }
+  #gate.hidden { display: none; }
+  .gate-card { background: white; color: #1A1A2E; padding: 48px 40px; border-radius: 24px; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .gate-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 16px; margin-bottom: 28px; }
+  .gate-brand .mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #FF6B35, #FFB627); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; }
+  #gate h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.01em; }
+  #gate p { font-size: 14px; color: #6B6B6B; margin-bottom: 24px; font-weight: 500; line-height: 1.7; }
+  #gate input { width: 100%; padding: 14px 18px; border: 1px solid #E8E5E0; border-radius: 12px; font-size: 15px; font-weight: 600; font-family: inherit; margin-bottom: 12px; outline: none; transition: all 0.15s; }
+  #gate input:focus { border-color: #FF6B35; box-shadow: 0 0 0 3px rgba(255,107,53,0.15); }
+  #gate button { width: 100%; padding: 14px; background: #FF6B35; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  #gate button:hover { background: #E8541F; }
+  #gate .err { color: #FF4757; font-size: 13px; margin-top: 8px; font-weight: 600; display: none; }
+  #gate .err.show { display: block; }
+</style>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand"><span class="mark">MB</span>MANGA BUFF</div>
+    <h2>限定プレビュー</h2>
+    <p>このページは招待制の作家向け資料です。アクセスコードを入力してください。</p>
+    <input type="password" id="gate-pw" placeholder="アクセスコード" autocomplete="off" />
+    <button id="gate-btn">閲覧する →</button>
+    <div class="err" id="gate-err">アクセスコードが正しくありません。</div>
+  </div>
+</div>
+<script>if(sessionStorage.getItem('mb-unlocked')==='1'){document.body.classList.remove('locked');var g=document.getElementById('gate');if(g)g.classList.add('hidden');}</script>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">MB</span>MANGA BUFF</a>
+    <button class="nav-toggle" aria-label="メニュー"><span></span></button>
+    <ul class="nav-menu">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="service.html">サービス内容</a></li>
+      <li><a href="money.html">料金・お金</a></li>
+      <li><a href="contract.html">契約について</a></li>
+      <li><a href="flow.html">ご相談後の流れ</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="about.html">代表の想い</a></li>
+    </ul>
+    <a href="flow.html" class="nav-cta">相談してみる</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">FLOW</span>
+    <h1>ご相談のあとの流れ</h1>
+    <p>「お話ししたあと、どう進むの？」——説明・ご相談のあと、契約書の送付から作品お預かり、配信開始、そして入金まで。作家さんの手を煩わせる工程はほとんどありません。</p>
+  </div>
+</div>
+
+<!-- === ステップ === -->
+<section>
+  <div class="container">
+    <div class="steps">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>ご相談・説明（この場）</h3>
+          <p>オンラインでサービス内容をご説明し、疑問にお答えします。<strong>この場で契約を締結することはありません</strong>。持ち帰ってじっくり検討いただけます。</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>X DMでご案内が届く</h3>
+          <p>お話しのあと、担当のXアカウントから「フレンド追加のうえ、サークル名をご返信ください」というDMが届きます。ここで作家さんの識別を行います。</p>
+          <span class="who you">作家さん：サークル名を返信</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Discord専用チャンネルにご招待</h3>
+          <p>作家さんごとに専用チャンネルを用意し、以降のやり取り・データ受け渡し・進捗共有をここで行います。<strong>Discordが苦手な方はメール対応も可能</strong>です。</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>契約書をメールで送付</h3>
+          <p>マネーフォワードの電子契約で契約書（配信代行の業務委託契約）をメール送付します。全文は <a href="contract.html" style="color:var(--primary);font-weight:800;">契約について</a> のページで先に読めます。</p>
+          <span class="who us">MANGA BUFF：契約書送付</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>電子署名</h3>
+          <p>内容にご納得いただけたら、マネーフォワード上で電子署名。押印・郵送は不要、スマホでも数分で完了します。</p>
+          <span class="who you">作家さん：電子署名</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <h3>作品データをお預かり</h3>
+          <p>専用チャンネル（または大容量便）で本編データと表紙用素材をお渡しください。形式はCLIP/PSD/JPG/PDF等そのままでOK。詳しくは <a href="service.html" style="color:var(--primary);font-weight:800;">納品方法</a> へ。</p>
+          <span class="who you">作家さん：データ提供</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">7</div>
+        <div class="step-body">
+          <h3>弊社で配信準備</h3>
+          <p>表紙・奥付の制作、EPUB変換、書誌情報整備、白抜き・モザイク処理、各書店の審査対応まで、すべて弊社が担当します（約1〜2週間）。</p>
+          <span class="who us">MANGA BUFF：制作・審査対応</span>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">8</div>
+        <div class="step-body">
+          <h3>配信開始</h3>
+          <p>準備が整った書店から順次配信を開始します。どの書店にいつ出たか、進捗はDiscordで随時ご報告します。</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">9</div>
+        <div class="step-body">
+          <h3>売上共有・月1MTG</h3>
+          <p>配信状況・売上を共有します。ご希望に応じて月1回の売上共有MTGも実施。「今どうなってるか分からない」という状態にはしません。</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">10</div>
+        <div class="step-body">
+          <h3>還元金のお振込</h3>
+          <p>四半期ごとに還元金（還元率60%）をお振込みします。振込の前月末に金額を通知し、ストア別の売上明細も開示します。</p>
+          <span class="who us">MANGA BUFF：入金</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl-box" style="margin-top:48px;">
+      <strong>作家さんにお願いすることは、実質「署名」と「データを渡す」の2つだけ</strong>
+      <p>あとの制作・書店対応・売上管理はすべて弊社が担当します。1作品からお預かり可能なので、まずは試しに1本、という始め方もできます。もし周りに同じように困っている作家さんがいれば、ご紹介いただけると嬉しいです（棚が強くなり、みんなの露出が上がります）。</p>
+    </div>
+
+    <div style="text-align:center; margin-top:44px;">
+      <a href="faq.html" class="btn-primary">よくある質問を見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="logo-mark">MB</span>MANGA BUFF</div>
+        <p class="footer-tagline">個人作家・同人サークルの作品を、100以上の電子書店へ一括配信する取次サービス。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>サービス</h5>
+          <a href="service.html">サービス内容</a>
+          <a href="money.html">料金・還元率</a>
+          <a href="flow.html">ご相談後の流れ</a>
+        </div>
+        <div class="footer-col">
+          <h5>詳しく知る</h5>
+          <a href="contract.html">契約について</a>
+          <a href="faq.html">よくある質問</a>
+          <a href="about.html">代表とMANGA BUFF</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-meta">漫画家のための電子書店一括配信サービス　|　運営：合同会社Realize　|　© 2026 MANGA BUFF</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
