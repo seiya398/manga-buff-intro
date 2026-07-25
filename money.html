@@ -128,19 +128,20 @@
       <p class="section-lead">架空のシミュレーションではなく、実際に配信している作品・作家さんの集計値でお見せします（作家名・作品名は伏せています）。誠実な判断材料にしてください。</p>
     </div>
 
+    <!-- AUTO-STATS: ①②③ の数字は refresh_lp_stats.py が data-stat 単位で自動差し替え（毎月15日 GitHub Actions）。手編集する場合は数字だけ変える -->
     <h3 class="block-title">① 1作品を出したときの初動（配信から30日）</h3>
     <div class="sim-grid">
-      <div class="sim-cell"><div class="sim-cell-label">ダウンロード数</div><div class="sim-cell-value">109<span style="font-size:0.5em;">本</span></div><div class="sim-cell-sub">中央値（真ん中の作品）</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">売上（流通額）</div><div class="sim-cell-value">¥5.5<span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">中央値／作品</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">作家さんへの還元（目安）</div><div class="sim-cell-value">¥1<span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">1作品あたり・初動30日</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">ダウンロード数</div><div class="sim-cell-value"><span data-stat="init_dl">109</span><span style="font-size:0.5em;">本</span></div><div class="sim-cell-sub">中央値（真ん中の作品）</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">売上（流通額）</div><div class="sim-cell-value"><span data-stat="init_sales">¥5.5</span><span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">中央値／作品</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">作家さんへの印税（目安）</div><div class="sim-cell-value"><span data-stat="init_return">¥1</span><span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">1作品あたり・初動30日</div></div>
     </div>
-    <p class="example-note">※ 配信済み100作品超の初動30日の中央値。ヒット作は初動30日で売上30万円超のものもあり、上位に偏る（＝当たれば大きい）分布です。</p>
+    <p class="example-note">※ 初動30日の窓が完成した作品の中央値。ヒット作は初動30日で売上30万円超のものもあり、上位に偏る（＝当たれば大きい）分布です。</p>
 
     <h3 class="block-title">② 預けた作品が増えるほど、印税は積み上がる</h3>
     <div class="sim-grid">
-      <div class="sim-cell"><div class="sim-cell-label">4作品ほど預けた作家さん</div><div class="sim-cell-value">約¥2<span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">月あたり（全体の中央値）</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">もっと預けている上位層</div><div class="sim-cell-value">¥5.7<span style="font-size:0.5em;">万</span>〜</div><div class="sim-cell-sub">月あたり（上位25%）</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">いちばん多い作家さん</div><div class="sim-cell-value">約¥47<span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">月あたり</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">4作品ほど預けた作家さん</div><div class="sim-cell-value"><span data-stat="m30_med">約¥2</span><span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">月あたり（全体の中央値）</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">もっと預けている上位層</div><div class="sim-cell-value"><span data-stat="m30_p75">¥5.7</span><span style="font-size:0.5em;">万</span>〜</div><div class="sim-cell-sub">月あたり（上位25%）</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">いちばん多い作家さん</div><div class="sim-cell-value"><span data-stat="m30_max">約¥47</span><span style="font-size:0.5em;">万</span></div><div class="sim-cell-sub">月あたり</div></div>
     </div>
     <div class="hl-box">
       <strong>「預けるほど増える」が、そのまま数字に出ています</strong>
@@ -149,11 +150,11 @@
 
     <h3 class="block-title">③ 実際の作家さんの「累計印税」（配信開始からの積み上がり）</h3>
     <div class="sim-grid">
-      <div class="sim-cell"><div class="sim-cell-label">トップの作家さん</div><div class="sim-cell-value">約76<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">配信開始から43日・10作品</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">2番目の作家さん</div><div class="sim-cell-value">約41<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">配信開始から約2ヶ月</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">3番目の作家さん</div><div class="sim-cell-value">約23<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">配信開始から31日・9作品</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">トップの作家さん</div><div class="sim-cell-value"><span data-stat="cum1">約76</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum1_sub">配信開始から43日・10作品</span></div></div>
+      <div class="sim-cell"><div class="sim-cell-label">2番目の作家さん</div><div class="sim-cell-value"><span data-stat="cum2">約41</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum2_sub">配信開始から約2ヶ月</span></div></div>
+      <div class="sim-cell"><div class="sim-cell-label">3番目の作家さん</div><div class="sim-cell-value"><span data-stat="cum3">約23</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum3_sub">配信開始から31日・9作品</span></div></div>
     </div>
-    <p class="example-note">※ 実際の作家さんの累計印税（概算・作家名は非公開・2026年時点）。まだ配信開始から1〜2ヶ月での数字です。参加40作家の累計印税の中央値も約4万円で、この短い期間ですでに積み上がり始めています。売上が急成長中のため、数字はさらに伸びています。</p>
+    <p class="example-note">※ 実際の作家さんの累計印税（概算・作家名は非公開）。まだ配信開始から1〜2ヶ月での数字です。参加<span data-stat="cum_n">40</span>作家の累計印税の中央値も<span data-stat="cum_med">約4万円</span>で、この短い期間ですでに積み上がり始めています。売上が急成長中のため、数字はさらに伸びています。</p>
 
     <h3 class="block-title">正直にお伝えすること</h3>
     <div class="callout info">
