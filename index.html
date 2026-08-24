@@ -8,38 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style id="gate-style">
-  body.locked { overflow: hidden; }
-  body.locked > *:not(#gate) { display: none !important; }
-  #gate { position: fixed; inset: 0; background: #1A1A2E; z-index: 99999; display: flex; align-items: center; justify-content: center; font-family: "Noto Sans JP", sans-serif; color: white; padding: 24px; }
-  #gate.hidden { display: none; }
-  .gate-card { background: white; color: #1A1A2E; padding: 48px 40px; border-radius: 24px; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-  .gate-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 16px; margin-bottom: 28px; }
-  .gate-brand .mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #FF6B35, #FFB627); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; }
-  #gate h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.01em; }
-  #gate p { font-size: 14px; color: #6B6B6B; margin-bottom: 24px; font-weight: 500; line-height: 1.7; }
-  #gate input { width: 100%; padding: 14px 18px; border: 1px solid #E8E5E0; border-radius: 12px; font-size: 15px; font-weight: 600; font-family: inherit; margin-bottom: 12px; outline: none; transition: all 0.15s; }
-  #gate input:focus { border-color: #FF6B35; box-shadow: 0 0 0 3px rgba(255,107,53,0.15); }
-  #gate button { width: 100%; padding: 14px; background: #FF6B35; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-  #gate button:hover { background: #E8541F; }
-  #gate .err { color: #FF4757; font-size: 13px; margin-top: 8px; font-weight: 600; display: none; }
-  #gate .err.show { display: block; }
-</style>
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="locked">
-
-<div id="gate">
-  <div class="gate-card">
-    <div class="gate-brand"><span class="mark">MB</span>MANGA BUFF</div>
-    <h2>限定プレビュー</h2>
-    <p>このページは招待制の作家向け資料です。アクセスコードを入力してください。</p>
-    <input type="password" id="gate-pw" placeholder="アクセスコード" autocomplete="off" />
-    <button id="gate-btn">閲覧する →</button>
-    <div class="err" id="gate-err">アクセスコードが正しくありません。</div>
-  </div>
-</div>
-<script>if(sessionStorage.getItem('mb-unlocked')==='1'){document.body.classList.remove('locked');var g=document.getElementById('gate');if(g)g.classList.add('hidden');}</script>
+<body>
 
 <!-- === NAV === -->
 <nav class="nav">

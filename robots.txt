@@ -1,0 +1,4 @@
+# 作家向け資料サイト。パスワードは外したが検索結果には出したくない。
+# 各ページの <meta name="robots" content="noindex,..."> と二重掛け。
+User-agent: *
+Disallow: /
