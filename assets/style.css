@@ -164,7 +164,14 @@ a { color: inherit; }
 .nav-toggle span::before { top: -6px; }
 .nav-toggle span::after { top: 6px; }
 
-@media (max-width: 900px) {
+/* 8リンクになったので中間幅は詰める（2026-11 売れ方と企画ページ追加） */
+@media (max-width: 1320px) {
+  .nav-menu { gap: 2px; }
+  .nav-menu a { padding: 8px 10px; font-size: 13.5px; }
+  .nav-cta { padding: 10px 16px; }
+}
+
+@media (max-width: 1100px) {
   .nav-toggle { display: inline-flex; }
   .nav-menu {
     position: absolute;
@@ -363,6 +370,10 @@ a { color: inherit; }
   letter-spacing: -0.03em;
 }
 .stat-value .unit { font-size: 0.55em; margin-left: 4px; }
+.stat-value .approx { font-size: 0.5em; margin-right: 2px; }
+/* 「成人向け」「手取り」「約20%」などを単語の途中で折り返さない */
+.nowrap { white-space: nowrap; }
+.hero-sub, .stat-label, .kp-tag, .sflow b, .mf-l, .proof-label, .ctl-node b { word-break: keep-all; overflow-wrap: anywhere; }
 .stat-label { font-size: 13px; font-weight: 700; color: var(--sub); margin-top: 12px; line-height: 1.5; }
 
 /* === Section === */
@@ -767,4 +778,158 @@ footer { background: var(--bg-soft); padding: 56px 0 44px; border-top: 1px solid
 @media (max-width: 640px) {
   section { padding: 72px 0; }
   .hero { padding: 64px 0 80px; }
+}
+
+
+/* === 先に知ってほしいこと（誤解ポイント） === */
+.first-box { max-width:860px; margin:28px auto 0; background:#fff; border:2px solid var(--primary); border-radius:16px; padding:22px 26px; text-align:left; }
+.first-box h3 { font-size:17px; font-weight:900; color:var(--primary-deep); margin-bottom:12px; letter-spacing:-0.01em; }
+.first-box ol { margin:0; padding-left:1.4em; }
+.first-box li { font-size:14.5px; line-height:1.9; color:var(--ink-soft); font-weight:500; margin-bottom:8px; }
+.first-box li strong { color:var(--ink); font-weight:900; }
+.first-box a { color:var(--primary); font-weight:800; }
+
+
+/* =========================================================
+   2026-11 第二改訂: 図解部品（HTML/CSS のみ・画像なし）
+   ========================================================= */
+
+/* --- 要点カード（各ページ冒頭。長い「先に誤解されやすい点」文章枠の置き換え） --- */
+.kp-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:14px; max-width:1000px; margin:36px auto 0; text-align:left; }
+.kp { position:relative; background:#fff; border:2px solid var(--primary); border-radius:18px; padding:20px 22px 18px; display:flex; flex-direction:column; }
+.kp-tag { font-family:"Inter", sans-serif; font-size:11px; font-weight:800; letter-spacing:.14em; color:var(--primary); margin-bottom:6px; }
+.kp-big { font-family:"Inter", "Noto Sans JP", sans-serif; font-size:clamp(30px, 3.6vw, 40px); font-weight:900; line-height:1.05; letter-spacing:-.03em; color:var(--ink); }
+.kp-big small { font-size:.46em; font-weight:800; margin-left:3px; letter-spacing:0; }
+.kp-head { font-size:15.5px; font-weight:900; color:var(--ink); margin-top:8px; line-height:1.5; letter-spacing:-.01em; }
+.kp p { font-size:12.5px; color:var(--ink-soft); line-height:1.7; margin-top:6px; font-weight:500; }
+.kp a { color:var(--primary); font-weight:800; }
+.kp.soft { border-color:var(--border); background:var(--bg-soft); }
+.kp-grid.four { max-width:1072px; }
+.kp-note { max-width:1000px; margin:12px auto 0; font-size:12.5px; color:var(--sub); text-align:left; font-weight:500; }
+
+/* --- お金の流れ（売価100% → 書店手数料 → 本使用料 → 作家） --- */
+.mflow { display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1.15fr; gap:8px; align-items:stretch; margin:28px 0 18px; }
+.mf { background:#fff; border:1px solid var(--border); border-radius:16px; padding:18px 16px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center; }
+.mf-l { font-size:12px; font-weight:800; color:var(--sub); letter-spacing:.02em; line-height:1.5; }
+.mf-v { font-family:"Inter", "Noto Sans JP", sans-serif; font-size:clamp(26px, 3vw, 34px); font-weight:900; letter-spacing:-.03em; line-height:1.1; color:var(--ink); margin:8px 0 4px; }
+.mf-s { font-size:12px; color:var(--ink-soft); font-weight:600; line-height:1.5; }
+.mf.store { background:#F3F1EE; border-color:#E2DDD6; }
+.mf.store .mf-v { color:#6B5B4E; }
+.mf.rlz { background:var(--bg-blue); border-color:#FFD9C2; }
+.mf.rlz .mf-v { color:var(--primary-deep); }
+.mf.you { background:linear-gradient(135deg, var(--green), #16A34A); border-color:transparent; color:#fff; box-shadow:0 10px 26px rgba(34,197,94,.25); }
+.mf.you .mf-l, .mf.you .mf-s { color:rgba(255,255,255,.9); }
+.mf.you .mf-v { color:#fff; }
+.mf-arrow { display:flex; align-items:center; justify-content:center; font-family:"Inter", sans-serif; font-size:22px; font-weight:800; color:var(--sub); }
+.mf-arrow small { display:block; font-size:10px; font-weight:800; letter-spacing:.04em; color:var(--sub); text-align:center; line-height:1.3; }
+@media (max-width: 760px) {
+  .mflow { grid-template-columns:1fr; }
+  .mf-arrow { transform:rotate(90deg); padding:2px 0; }
+}
+.mflow.compact { max-width:1000px; margin:28px auto 0; gap:6px; }
+.mflow.compact .mf { padding:12px 10px 10px; }
+.mflow.compact .mf-v { font-size:clamp(22px, 2.4vw, 28px); margin:6px 0 2px; }
+.mflow.compact .mf-l, .mflow.compact .mf-s { font-size:11.5px; }
+.mflow.compact .mf.you { box-shadow:none; }
+/* 売価を100としたときの取り分バー（書店 / MANGA BUFF運営 / 作家） */
+.mbar { display:flex; height:54px; border-radius:14px; overflow:hidden; margin-top:6px; }
+.mbar > div { display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:13.5px; letter-spacing:-.01em; white-space:nowrap; }
+.mbar .b-store { flex:70; background:#6B5B4E; }
+.mbar .b-rlz { flex:12; background:#A8ACB4; font-size:12px; }
+.mbar .b-you { flex:18; background:linear-gradient(135deg, var(--green), #16A34A); }
+.mbar-legend { display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:10px; font-size:12.5px; color:var(--ink-soft); font-weight:600; }
+.mbar-legend span::before { content:''; display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+.mbar-legend .l-store::before { background:#6B5B4E; }
+.mbar-legend .l-rlz::before { background:#A8ACB4; }
+.mbar-legend .l-you::before { background:var(--green); }
+
+/* --- 入金タイミングのタイムライン（5月開始の例） --- */
+.ptl { background:#fff; border:1px solid var(--border); border-radius:18px; padding:22px 22px 18px; margin:28px 0 0; overflow-x:auto; }
+.ptl-grid { display:grid; grid-template-columns:repeat(7, minmax(84px, 1fr)); gap:6px; min-width:620px; }
+.ptl-m { text-align:center; font-family:"Inter", sans-serif; font-size:12px; font-weight:800; color:var(--sub); padding-bottom:8px; border-bottom:1px solid var(--rule); }
+.ptl-m b { display:block; font-size:16px; color:var(--ink); }
+.ptl-band { border-radius:10px; padding:10px 10px; font-size:12.5px; font-weight:800; line-height:1.45; text-align:center; min-height:52px; display:flex; flex-direction:column; justify-content:center; }
+.ptl-band small { display:block; font-size:11px; font-weight:600; opacity:.85; }
+.ptl-band.sales { grid-column:1 / span 3; background:rgba(34,197,94,.12); color:#14663a; border:1px dashed rgba(34,197,94,.5); }
+.ptl-band.wait { grid-column:4 / span 3; background:#F3F1EE; color:#5E5248; border:1px dashed #D9D2C8; }
+.ptl-band.pay { grid-column:7 / span 1; background:linear-gradient(135deg, var(--primary), var(--accent)); color:#fff; box-shadow:0 8px 22px rgba(255,107,53,.3); }
+.ptl-mark { font-size:11.5px; font-weight:800; color:var(--ink-soft); text-align:center; padding-top:4px; line-height:1.4; }
+.ptl-mark.start { grid-column:1; color:#14663a; }
+.ptl-mark.close { grid-column:3; }
+.ptl-mark.notice { grid-column:6; }
+.ptl-mark.pay { grid-column:7; color:var(--primary-deep); }
+.ptl-sum { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 20px; margin-top:16px; padding-top:14px; border-top:1px solid var(--rule); }
+.ptl-sum .big { font-size:17px; font-weight:900; color:var(--ink); letter-spacing:-.01em; }
+.ptl-sum .big em { font-style:normal; color:var(--primary-deep); font-size:1.25em; }
+.ptl-sum .fine { font-size:12px; color:var(--sub); font-weight:500; line-height:1.6; }
+/* 年4回の振込カレンダー */
+.pay4 { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; margin-top:16px; }
+.pay4 > div { background:#fff; border:1px solid var(--border); border-radius:14px; padding:14px 12px; text-align:center; }
+.pay4 b { display:block; font-family:"Inter", "Noto Sans JP", sans-serif; font-size:20px; font-weight:900; color:var(--primary-deep); letter-spacing:-.02em; }
+.pay4 span { font-size:12px; color:var(--ink-soft); font-weight:600; }
+
+/* --- 契約〜配信のステップ図（横並び・折返し） --- */
+.sflow { list-style:none; display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; counter-reset:sf; margin:30px 0 0; }
+.sflow li:nth-child(4n)::after { display:none; }
+@media (max-width: 860px) { .sflow { grid-template-columns:repeat(2, 1fr); } .sflow li:nth-child(4n)::after { display:block; } .sflow li:nth-child(2n)::after { display:none; } }
+@media (max-width: 480px) { .sflow { grid-template-columns:1fr; } .sflow li::after { display:none; } }
+.sflow li { position:relative; background:#fff; border:1px solid var(--border); border-radius:16px; padding:16px 14px 14px; counter-increment:sf; display:flex; flex-direction:column; min-height:0; }
+.sflow li::before { content:counter(sf); width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg, var(--primary), var(--accent)); color:#fff; font-family:"Inter", sans-serif; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
+.sflow li::after { content:'›'; position:absolute; right:-9px; top:50%; transform:translateY(-50%); width:18px; height:18px; border-radius:50%; background:#fff; border:1px solid var(--border); color:var(--sub); font-size:14px; font-weight:800; line-height:16px; text-align:center; z-index:1; }
+.sflow li:last-child::after { display:none; }
+.sflow b { font-size:14.5px; font-weight:900; color:var(--ink); line-height:1.4; letter-spacing:-.01em; }
+.sflow span { font-size:12px; color:var(--ink-soft); line-height:1.6; margin-top:6px; font-weight:500; flex:1; }
+.sflow em { font-style:normal; display:inline-block; align-self:flex-start; margin-top:10px; font-size:10.5px; font-weight:800; letter-spacing:.04em; padding:2px 9px; border-radius:100px; background:var(--primary-light); color:var(--primary-deep); }
+.sflow li.you em { background:rgba(34,197,94,.12); color:#14663a; }
+.sflow li.hi { border:2px solid var(--primary); }
+
+/* --- 契約期間の横タイムライン（署名→配信開始→1年→解約可→終了後） --- */
+.ctl { background:#fff; border:1px solid var(--border); border-radius:18px; padding:22px 22px 16px; margin-top:20px; }
+.ctl-track { display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; position:relative; }
+.ctl-track::before { content:''; position:absolute; left:10%; right:10%; top:13px; height:4px; border-radius:2px; background:linear-gradient(90deg, var(--primary), var(--accent)); }
+.ctl-node { position:relative; text-align:center; padding-top:38px; }
+.ctl-node::before { content:''; position:absolute; left:50%; top:4px; transform:translateX(-50%); width:22px; height:22px; border-radius:50%; background:#fff; border:4px solid var(--primary); box-sizing:border-box; }
+.ctl-node.hi::before { background:var(--primary); }
+.ctl-node b { display:block; font-size:14.5px; font-weight:900; color:var(--ink); line-height:1.4; letter-spacing:-.01em; }
+.ctl-node span { display:block; font-size:12px; color:var(--ink-soft); line-height:1.6; margin-top:6px; font-weight:500; }
+.ctl-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--rule); font-size:12.5px; color:var(--ink-soft); font-weight:600; line-height:1.7; }
+@media (max-width: 760px) {
+  .ctl-track { grid-template-columns:1fr; gap:14px; }
+  .ctl-track::before { left:9px; right:auto; top:8px; bottom:8px; width:4px; height:auto; }
+  .ctl-node { text-align:left; padding:0 0 0 36px; }
+  .ctl-node::before { left:0; top:2px; transform:none; }
+}
+
+/* --- 簡潔な比較表（3列） --- */
+.cmp-wrap { background:#fff; border:1px solid var(--border); border-radius:16px; overflow-x:auto; margin:24px 0 0; }
+table.cmp { min-width:640px; }
+table.cmp th:first-child, table.cmp td:first-child { width:22%; font-weight:800; color:var(--sub); font-size:12.5px; }
+table.cmp th.mbcol, table.cmp td.mbcol { background:var(--bg-blue); color:var(--ink); font-weight:800; }
+table.cmp th.mbcol { color:var(--primary-deep); }
+table.cmp td { font-size:13.5px; line-height:1.6; vertical-align:top; }
+table.cmp td.dim { color:var(--sub); font-weight:500; }
+
+/* --- 本文中の折りたたみ（長文の退避先） --- */
+details.fold { background:var(--bg-soft); border:1px solid var(--border); border-radius:14px; padding:14px 20px; margin:16px 0 0; }
+details.fold[open] { background:#fff; }
+details.fold summary { font-size:14px; }
+details.fold > div { font-size:13.5px; }
+
+/* --- 大きな一言（ページ冒頭のメッセージ） --- */
+.big-say { text-align:center; font-size:clamp(18px, 2.4vw, 24px); font-weight:900; color:var(--ink); letter-spacing:-.01em; line-height:1.5; margin:0 auto; max-width:860px; }
+.big-say em { font-style:normal; color:var(--primary-deep); }
+
+/* === 送付用PDF／印刷 === */
+@media print {
+  .nav, .nav-cta, .nav-toggle, .btn-primary, .btn-secondary, .hub-go, .note-go { display:none !important; }
+  body { font-size:13px; }
+  section, .page-hero { padding-top:28px; padding-bottom:28px; }
+  .hero { padding-top:28px; padding-bottom:28px; }
+  details { break-inside:avoid; }
+  details > div { display:block !important; }
+  .problem-card, .solution-card, .hub-card, .voice, .note-card, .sim-cell, .step-row, .money-card, .table-wrap, .callout, .hl-box, .first-box, .contract-article, .compare-col, .cta-band, .proof-band,
+  .kp, .kp-grid, .mflow, .mbar, .ptl, .pay4, .sflow li, .cmp-wrap, details.fold, .ctl { break-inside:avoid; }
+  footer, .cta-band, .chip-nav, .hero-cta { display:none !important; }
+  h2, h3, .section-head, .page-hero { break-after:avoid; }
+  * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
 }

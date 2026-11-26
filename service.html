@@ -19,9 +19,10 @@
     <ul class="nav-menu">
       <li><a href="index.html">ホーム</a></li>
       <li><a href="service.html">サービス内容</a></li>
-      <li><a href="money.html">印税・お金</a></li>
+      <li><a href="money.html">手取りと支払い</a></li>
       <li><a href="contract.html">契約について</a></li>
       <li><a href="flow.html">ご相談後の流れ</a></li>
+      <li><a href="sales.html">売れ方と企画</a></li>
       <li><a href="faq.html">よくある質問</a></li>
       <li><a href="about.html">代表の想い</a></li>
     </ul>
@@ -38,7 +39,7 @@
 </div>
 
 <!-- === 何を代行するか === -->
-<section>
+<section data-pdf="skip">
   <div class="container">
     <div class="section-head">
       <span class="section-label">WHAT WE DO</span>
@@ -46,16 +47,16 @@
     </div>
     <div class="solution-grid">
       <div class="solution-card"><div class="solution-icon">🛠</div><h3>全部代行</h3><p>書店交渉・EPUB制作・書誌入力・表紙デザインまで対応。作家さんの手間はゼロ。</p></div>
-      <div class="solution-card"><div class="solution-icon">🏪</div><h3>100書店へ一括</h3><p>コミックシーモア・LINEマンガ・Kindle・楽天Kobo等の主要書店＋100書店へ。</p></div>
-      <div class="solution-card"><div class="solution-icon">💰</div><h3>還元率60%</h3><p>業界水準40%前後に対してMANGA BUFFは60%。業界の1.5倍の手取り。</p></div>
-      <div class="solution-card"><div class="solution-icon">🎨</div><h3>AI作品も公式対応</h3><p>AI生成作品も対応。申告いただければ適切な書店を選定して配信します。</p></div>
+      <div class="solution-card"><div class="solution-icon">🏪</div><h3>100書店へ一括</h3><p>コミックシーモア・楽天Kobo等の主要書店を含む100以上の書店へ（全年齢含む総数）。成人向けAIは約30書店ですが、売れる店は押さえています。</p></div>
+      <div class="solution-card"><div class="solution-icon">💰</div><h3>手取りは売価の約20%</h3><p>本使用料に対する還元率は60%（業界水準は40%前後）。手取りは販売価格の約20%が目安です。</p></div>
+      <div class="solution-card"><div class="solution-icon">🎨</div><h3>AI作品も公式対応</h3><p>AI生成作品も対応。「AI使用あり」と申告いただければ、当社が出せる書店を選定して配信します。</p></div>
       <div class="solution-card"><div class="solution-icon">💬</div><h3>Discordで密に伴走</h3><p>作家さんごとに専用チャンネル。メール中心の取次と違い、連絡もレスポンスも速いのが強みです。</p></div>
     </div>
   </div>
 </section>
 
 <!-- === 配信先電子書店 === -->
-<section class="bg-soft">
+<section class="bg-soft" id="stores">
   <div class="container">
     <div class="section-head">
       <span class="section-label">STORES</span>
@@ -63,9 +64,10 @@
       <p class="section-lead">「具体的にどこに出るの？」——実際に配信できる書店を公開します。</p>
     </div>
 
-    <div class="callout warn" style="max-width:820px; margin:0 auto 28px;">
-      <strong>「100以上の電子書店」は全年齢作品を含めた総数です。</strong><br>
-      成人向けのAI漫画の場合、書店ごとの審査基準（AI作品・成人向けの取り扱い可否）により、<strong>実際に配信できるのは30書店ほど</strong>になります。出せる書店を選定して配信するので、「出したのに審査で落ちて損した」ということは起きません。
+    <div class="kp-grid" style="margin:0 auto 28px; max-width:900px;">
+      <div class="kp"><div class="kp-tag">総数</div><div class="kp-big">100<small>以上</small></div><div class="kp-head">全年齢作品を含めた総数</div><p>全年齢作品なら、さらに幅広い書店へ配信できます。</p></div>
+      <div class="kp"><div class="kp-tag">成人向けAI</div><div class="kp-big">約30<small>書店</small></div><div class="kp-head">実際に配信できる書店</div><p>配信先の書店は当社が選定します（作家側で指定・除外はできません）。出せる書店を選んで配信するので「審査で落ちて損」は起きません。</p></div>
+      <div class="kp"><div class="kp-tag">売れる店</div><div class="kp-big">押さえて<small>います</small></div><div class="kp-head">売れる書店はだいたい決まっている</div><p>コミックシーモアをはじめ、成人向けで売上の立つ主要店は押さえています（<a href="sales.html">売れ方と企画</a>）。</p></div>
     </div>
 
     <h3 class="block-title" style="text-align:center;">成人向け作品が実際に配信される代表的な書店</h3>
@@ -81,8 +83,14 @@
       </table>
     </div>
     <div class="callout info" style="max-width:820px; margin:24px auto 0;">
-      書店ごとに審査基準が異なります。特に<strong>Amazon（Kindle）はAI成人作品がガイドライン抵触で配信停止になった例</strong>があり、Apple Booksやピッコマ等は取次・作品によって可否が分かれます（最終的な配信可否は各ストアの審査によります）。全年齢作品であれば、さらに幅広い書店へ配信できます。
+      書店ごとに審査基準が異なります。特に<strong>Amazon（Kindle）はAI成人作品がガイドライン抵触で配信停止になった例</strong>があり、成人向けAIでは落ちやすい書店です。Apple Booksやピッコマ等は取次・作品によって可否が分かれます（最終的な配信可否は各ストアの審査によります）。全年齢作品であれば、さらに幅広い書店へ配信できます。配信先書店の選定と配信開始日の決定は当社が行い（契約書第1条5項）、作家側で書店を自由に指定・除外することはできません。
     </div>
+    <details class="fold" style="max-width:820px; margin:16px auto 0;">
+      <summary>お預けの前に、配信先の全一覧を確認したい方へ／KU・海外版について</summary>
+      <div>
+      上の表が成人向けの代表店です。全配信先の一覧、Kindle Unlimited（読み放題）、海外書店・英語版（他社へ英語版を独占許諾済みの作品の日本語版を含む）については、ご相談時に個別にご案内します。
+      </div>
+    </details>
   </div>
 </section>
 
@@ -103,7 +111,7 @@
           <li>作品タイトル・あらすじ</li>
           <li>著作権の表明（他社取次で配信中でないこと）</li>
           <li>表紙用キャラクターデータ（弊社で表紙を制作）</li>
-          <li>SNS ID（X等、奥付に記載用・任意）</li>
+          <li>SNS ID（X等、奥付に記載用・任意）<br><span style="font-size:13px;color:var(--sub);">※ 奥付に載せた X のIDは<strong>配信後に変更できません</strong>。長く使うIDをお知らせください。</span></li>
         </ul>
       </div>
       <div>
@@ -112,6 +120,7 @@
         <ul class="feature-list">
           <li>EPUB形式への変換（技術的な最適化含む）</li>
           <li>表紙・奥付のデザイン（追加費用なし）</li>
+          <li>書影（書店に並ぶ表紙まわりの書誌画像）の制作</li>
           <li>書誌情報の書店フォーマット変換</li>
           <li>各書店への配信許諾交渉</li>
           <li>白抜き・モザイク処理対応</li>
@@ -122,8 +131,8 @@
       </div>
     </div>
     <div class="hl-box">
-      <strong>業務委託料40%にすべて含まれます</strong>
-      <p>追加費用は一切かかりません。売上が発生した時だけ、売上の一部から運営費を頂戴する完全成果報酬型です。表紙を作って売れなくても、費用を請求することはありません。</p>
+      <strong>上記はすべて、本使用料のうち当社が制作・配信業務に使う分（40%＝売価の約12%）に含まれます</strong>
+      <p>追加費用はかかりません。売上が発生した時だけ、本使用料の一部から運営費を頂戴する完全成果報酬型です。表紙を作って売れなくても、費用を請求することはありません。</p>
     </div>
   </div>
 </section>
@@ -142,7 +151,7 @@
       <table>
         <thead><tr><th>種類</th><th>対応形式</th><th>備考</th></tr></thead>
         <tbody>
-          <tr><td>本編（原稿）</td><td class="mb">CLIP STUDIO / PSD / JPG / PNG / PDF</td><td>お手元にある形式のままでOK。書き出し直し不要</td></tr>
+          <tr><td>本編（原稿）</td><td class="mb">CLIP STUDIO（.clip） / PSD / JPG / PNG / PDF</td><td>お手元にある形式のままでOK。書き出し直し不要。<strong>JPGをページ順にZIPでまとめて</strong>いただく形で十分です</td></tr>
           <tr><td>表紙</td><td class="mb">キャラクター素材（PSD/PNG/JPG）</td><td>表紙そのものは弊社で制作。素材データをいただければ十分</td></tr>
           <tr><td>作品情報</td><td class="mb">テキスト（タイトル・あらすじ・タグ）</td><td>Discord/メールにそのまま貼っていただくだけ</td></tr>
         </tbody>
@@ -160,7 +169,7 @@
       <div class="flow-step">
         <div class="flow-step-label">STEP 02</div>
         <h3>データをアップ</h3>
-        <p>ファイル容量が大きい場合はギガファイル便などの大容量便のリンクでも受け取れます。分割送付も歓迎。</p>
+        <p>専用チャンネルに直接アップするか、ギガファイル便などの大容量便のリンク、またはGoogleドライブの共有フォルダで受け取れます。分割送付も歓迎。</p>
       </div>
       <div class="flow-step">
         <div class="flow-step-label">STEP 03</div>
@@ -168,20 +177,69 @@
         <p>タイトル・あらすじ・年齢区分・AI使用の有無を一言添えていただければ受領完了です。</p>
       </div>
     </div>
-
-    <h3 class="block-title">③ ページ数・販売単位について</h3>
     <div class="callout info">
-      電子書店は「1作品＝1商品」で販売する構造です。目安として <strong>40ページ以上のボリューム作品は、10ページ＝1話などの「話数売り」</strong> にして販売することがあります（そのほうが読者が手に取りやすく、売上も伸びやすいため）。分割の仕方は弊社で設計し、事前にご相談します。総集編は個別相談、おまけ単独は本編組み込みでの対応となります。
+      <strong>Googleドライブでも受け取れます</strong><br>
+      ファイルが多い・容量が大きい場合は、当社が用意する<strong>作品素材共有用のGoogleドライブフォルダ</strong>にアップロードしていただく方法もあります（フォルダのリンクは契約後にお渡しします。作品ごとにフォルダを分けて入れていただくだけです）。ギガファイル便などの大容量便のリンクも引き続きOKです。<br>
+      <strong>Discordを使えない方</strong>は、メール＋Googleドライブでのやり取りに切り替えますので、ご相談時にお知らせください。
     </div>
+
+    <h3 class="block-title">③ ページ数・販売単位・出し方について</h3>
+    <div class="kp-grid" style="margin-top:0; max-width:none;">
+      <div class="kp soft"><div class="kp-tag">販売単位</div><div class="kp-head">40ページ以上は「話売り」にすることも</div><p>10ページ＝1話などに分けると手に取られやすく売上も伸びやすいため。分け方は当社が設計し、事前にご相談します。</p></div>
+      <div class="kp soft"><div class="kp-tag">傾向</div><div class="kp-head">総集編より単行本が売れています</div><p>総集編は個別相談。おまけ単独は本編組み込みでの対応になります。</p></div>
+      <div class="kp soft"><div class="kp-tag">おすすめ</div><div class="kp-head">同人で1〜2ヶ月先行 → 商業へ</div><p>同人と商業は読者層が別なので売り場が純増します。</p></div>
+    </div>
+    <details class="fold">
+      <summary>同人版との併存・価格差・話売りの細かいルールについて</summary>
+      <div>ご自身で販売中の同人版と商業版の価格差や改訂版の扱い、話売り／巻売りの細かいルールは、ご相談時に個別にご案内します。同人版と商業版が同じ運営会社の書店になる場合（例：FANZA同人と FANZA Books）は、同人側の取り下げや専売解除が必要になることがあります。</div>
+    </details>
 
     <h3 class="block-title">④ モザイク・白抜きなどの調整</h3>
     <div class="callout ok">
       成人向け作品のモザイク処理・白抜き対応は、<strong>すべて弊社側で行います</strong>（追加費用なし）。書店ごとに審査基準が違うため、複数パターンを用意して各書店の公開まで対応します。作家さんが書店仕様に合わせて描き直す必要はありません。
     </div>
 
+    <h3 class="block-title">⑤ 配信開始までの期間と、公開の確認</h3>
+    <div class="callout info">
+      データをお預かりしてから<strong>配信準備に約1〜2週間</strong>、その後は書店ごとに審査が通った順に配信が始まります。書店ごとに審査期間が違うため、全書店の一斉公開日や、契約から初公開までの総日数はお約束できません。<br>
+      配信が始まったら<strong>運営から専用窓口でご連絡します</strong>。あわせて、ご自身でも書店で作品名を検索して確認してください。連絡から日が経っても見当たらない、連絡が来ない、という場合は<strong>すぐにお知らせください</strong>。すぐに状況を確認します。
+    </div>
+    <details class="fold">
+      <summary>広告・販促について</summary>
+      <div>書店のセール・特集・レコメンド枠への掲載は弊社が調整します。弊社や書店が出す広告については、ご相談時に個別にご案内します。作家さんに広告費をご負担いただくことはありません。</div>
+    </details>
+  </div>
+</section>
+
+<!-- === AI作品のお預かり方針 === -->
+<section class="bg-soft" id="ai-policy">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">AI POLICY</span>
+      <h2 class="section-title">AI生成作品の<span class="gradient">お預かり条件</span></h2>
+      <p class="section-lead">AI作品は当社の主力で、公式に対応しています。そのうえで、お預かりの条件を先にお伝えします。</p>
+    </div>
+    <div class="two-col" style="align-items:start;">
+      <div class="callout ok" style="margin:0;">
+        <strong>お預かりするのは、次のどちらかです</strong><br>
+        ① <strong>すでに同人として公開済みの作品</strong>を、商業電子書店の配信に乗せる場合<br>
+        ② <strong>商業配信専用として制作する作品</strong>（企画段階からご相談いただけます）
+      </div>
+      <div class="callout warn" style="margin:0;">
+        <strong>お受けしていないもの</strong><br>
+        量産した未公開のストックを、そのまま大量にお預けいただく形はお受けしていません。書店の審査・棚の信頼・既存の作家さんの売上を守るためで、一作ずつ読者に届く形で一緒に出していきたいと考えています。
+      </div>
+    </div>
+    <div class="callout info">
+      <strong>そのほかのAI関連のルール</strong><br>
+      ・データをお渡しいただく際に「AI使用あり」（使用ツール名があれば併記）と申告してください。書店への申告・申請手続きは当社が行います。<br>
+      ・絵柄が特定の作家・キャラに酷似していそうな場合は、配信前のチェック（AI＋目視＋書店審査）でお知らせし、必要なら該当作品を外すご提案をします。<br>
+      ・全年齢のAI作品も事前確認のうえお預かりできます。サンプルをお見せいただく条件があります。条件の細部はご相談時に個別にご案内します。
+    </div>
     <div style="text-align:center; margin-top:44px;">
       <a href="flow.html" class="btn-primary">このあとの流れを見る</a>
     </div>
+
   </div>
 </section>
 
@@ -196,8 +254,9 @@
         <div class="footer-col">
           <h5>サービス</h5>
           <a href="service.html">サービス内容</a>
-          <a href="money.html">印税・還元率</a>
+          <a href="money.html">手取りと支払い</a>
           <a href="flow.html">ご相談後の流れ</a>
+          <a href="sales.html">売れ方と企画</a>
         </div>
         <div class="footer-col">
           <h5>詳しく知る</h5>
