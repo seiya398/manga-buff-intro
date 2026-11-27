@@ -168,33 +168,53 @@
     <div class="section-head">
       <span class="section-label">REAL DATA</span>
       <h2 class="section-title">実際の<span class="gradient">MANGA BUFF</span>の数字</h2>
-      <p class="section-lead">架空のシミュレーションではなく、実際に配信している作品・作家さんの集計値です（作家名・作品名は伏せています）。</p>
+      <p class="section-lead">架空のシミュレーションではなく、実際に配信している作品・作家さんの集計値です。<span class="nowrap">①〜③</span>は取次の外部作家さん分で、作家名・作品名は伏せています。運営メンバーの作品は末尾の別枠に分けて掲載しています。</p>
     </div>
 
-    <!-- AUTO-STATS: ①②③ の数字は refresh_lp_stats.py が data-stat 単位で自動差し替え（毎月15日 GitHub Actions）。手編集する場合は数字だけ変える -->
+    <!-- AUTO-STATS: ①②③ の数字は refresh_lp_stats.py が data-stat 単位で自動差し替え（毎月15日 GitHub Actions）。手編集する場合は数字だけ変える。タイトル累計・ぜっぺい別枠は 2026-11-26 時点の手掲載（自動差し替え対象外）。 -->
     <h3 class="block-title">① 1作品を出したときの初動（配信から30日）</h3>
     <div class="sim-grid">
-      <div class="sim-cell"><div class="sim-cell-label">ダウンロード数</div><div class="sim-cell-value"><span data-stat="init_dl">22</span><span style="font-size:0.5em;">本</span></div><div class="sim-cell-sub">中央値（真ん中の作品）</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">売上（流通額）</div><div class="sim-cell-value"><span data-stat="init_sales">約6,000円</span></div><div class="sim-cell-sub">中央値／作品</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">作家さんへの手取り（目安）</div><div class="sim-cell-value"><span data-stat="init_return">約1,000円</span></div><div class="sim-cell-sub">1作品あたり・初動30日</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">ダウンロード数</div><div class="sim-cell-value"><span data-stat="init_dl">21</span><span style="font-size:0.5em;">本</span></div><div class="sim-cell-sub">中央値（半分の作品はこの本数以下）</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">売上（流通額）</div><div class="sim-cell-value"><span data-stat="init_sales">約6,000円</span></div><div class="sim-cell-sub">中央値（半分の作品はこの金額以下）</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">作家さんへの手取り（目安）</div><div class="sim-cell-value"><span data-stat="init_return">約1,000円</span></div><div class="sim-cell-sub">中央値（半分の作品はこの金額以下）</div></div>
     </div>
-    <p class="example-note">※ 初動30日の窓が完成した作品の中央値。ヒット作は初動30日で売上30万円超のものもあり、上位に偏る（＝当たれば大きい）分布です。</p>
+    <p class="example-note">※ 上記は初動30日の中央値です（半分の作品はこの金額以下）。平均は流通 <span class="nowrap">約3.3万円</span>／手取り <span class="nowrap">約6,000円</span>。初動30日で<span class="nowrap">流通30万円超が55作（約2%）</span>あります。上位に偏る（当たれば大きい）分布です。</p>
+
+    <h3 class="block-title">タイトル累計（取次作品・版違いを1作にまとめた 1,943作）</h3>
+    <div class="sim-grid">
+      <div class="sim-cell"><div class="sim-cell-label">流通額の中央値</div><div class="sim-cell-value">約1.1<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">1作品あたり</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">流通額の平均</div><div class="sim-cell-value">約7.8<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">1作品あたり</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">上位10%</div><div class="sim-cell-value">約21<span style="font-size:0.5em;">万円〜</span></div><div class="sim-cell-sub">流通額</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">最高</div><div class="sim-cell-value">約308<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">手取り概算 約56万円</div></div>
+    </div>
+    <p class="example-note">※ 集計期間 2026-04-27〜2026-11-26。取次の外部作家作品のみ。版違い（通常版・修正版など）は1作にまとめています。作家名・作品名は出していません。</p>
 
     <h3 class="block-title">② 預けた作品が増えるほど、手取りは積み上がる</h3>
     <div class="sim-grid">
-      <div class="sim-cell"><div class="sim-cell-label">4作品ほど預けた作家さん</div><div class="sim-cell-value"><span data-stat="m30_med">約1.8</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">月あたり（全体の中央値）</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">もっと預けている上位層</div><div class="sim-cell-value"><span data-stat="m30_p75">約6.1</span><span style="font-size:0.5em;">万円〜</span></div><div class="sim-cell-sub">月あたり（上位25%）</div></div>
-      <div class="sim-cell"><div class="sim-cell-label">いちばん多い作家さん</div><div class="sim-cell-value"><span data-stat="m30_max">約57</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">月あたり</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">4作品ほど預けた作家さん</div><div class="sim-cell-value"><span data-stat="m30_med">約1.9</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">月あたり（全体の中央値）</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">もっと預けている上位層</div><div class="sim-cell-value"><span data-stat="m30_p75">約7.7</span><span style="font-size:0.5em;">万円〜</span></div><div class="sim-cell-sub">月あたり（上位25%）</div></div>
+      <div class="sim-cell"><div class="sim-cell-label">いちばん多い作家さん</div><div class="sim-cell-value"><span data-stat="m30_max">約64</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">月あたり</div></div>
     </div>
-    <p class="example-note">※ 中央値の作家さんは平均して4作品ほどを預けた状態。作品を増やすほど各作品の波がならされ、月の手取りは安定して積み上がります。眠っているバックリストもまとめてどうぞ。</p>
+    <p class="example-note">※ 中央値の作家さんは平均して4作品ほどを預けた状態。作品を増やすほど各作品の波がならされ、月の手取りは安定して積み上がります。眠っているバックリストもまとめてどうぞ。直近30日・2026-11-26時点。</p>
 
     <h3 class="block-title">③ 実際の作家さんの「累計の手取り」（配信開始からの積み上がり）</h3>
     <div class="sim-grid">
-      <div class="sim-cell"><div class="sim-cell-label">トップの作家さん</div><div class="sim-cell-value"><span data-stat="cum1">約318</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum1_sub">配信開始から156日</span></div></div>
-      <div class="sim-cell"><div class="sim-cell-label">2番目の作家さん</div><div class="sim-cell-value"><span data-stat="cum2">約167</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum2_sub">配信開始から76日</span></div></div>
-      <div class="sim-cell"><div class="sim-cell-label">3番目の作家さん</div><div class="sim-cell-value"><span data-stat="cum3">約105</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum3_sub">配信開始から55日</span></div></div>
+      <div class="sim-cell"><div class="sim-cell-label">トップの作家さん</div><div class="sim-cell-value"><span data-stat="cum1">約347</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum1_sub">配信開始から167日</span></div></div>
+      <div class="sim-cell"><div class="sim-cell-label">2番目の作家さん</div><div class="sim-cell-value"><span data-stat="cum2">約183</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum2_sub">配信開始から87日</span></div></div>
+      <div class="sim-cell"><div class="sim-cell-label">3番目の作家さん</div><div class="sim-cell-value"><span data-stat="cum3">約137</span><span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub"><span data-stat="cum3_sub">配信開始から66日</span></div></div>
     </div>
-    <p class="example-note">※ 実際の作家さんの累計の手取り（概算・作家名は非公開）。参加<span data-stat="cum_n">98</span>作家の累計の手取りの中央値は<span data-stat="cum_med">約10万円</span>。売上が急成長中のため、数字は今後変わります。</p>
+    <p class="example-note">※ 実際の作家さんの累計の手取り（概算・作家名は非公開）。参加<span data-stat="cum_n">101</span>作家の累計の手取りの中央値は<span data-stat="cum_med">約10万円</span>。売上が急成長中のため、数字は今後変わります。2026-11-26時点。</p>
+
+    <div class="sep-box">
+      <div class="sep-tag">別枠 ／ 取次外部作家の集計には含めていません</div>
+      <h3>ぜっぺいさん（運営メンバーの作品）</h3>
+      <p class="sep-lead">①〜③の中央値・平均とは混ぜていません。以下は定価×ダウンロード数の「販売額」であり、作家さんへの60%手取りとは別の数字です。作品名は掲載していません。</p>
+      <div class="sim-grid">
+        <div class="sim-cell"><div class="sim-cell-label">代表作単体の販売額</div><div class="sim-cell-value">約2,071<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">配信約6ヶ月 ／ 23,151DL</div></div>
+        <div class="sim-cell"><div class="sim-cell-label">ライン全体の月間最高</div><div class="sim-cell-value">約1,020<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">2026年10月・販売額</div></div>
+        <div class="sim-cell"><div class="sim-cell-label">ライン全体の累計販売額</div><div class="sim-cell-value">約2,265<span style="font-size:0.5em;">万円</span></div><div class="sim-cell-sub">販売額ベース</div></div>
+      </div>
+    </div>
 
     <details class="fold">
       <summary>正直にお伝えすること（同人との売れ方の違い）</summary>

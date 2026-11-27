@@ -554,6 +554,14 @@ section.bg-dark .section-lead { color: rgba(255,255,255,0.75); }
 .sim-cell-value { font-family: "Inter", sans-serif; font-size: 30px; font-weight: 800; background: linear-gradient(120deg, var(--primary-deep) 0%, var(--primary) 52%, var(--accent) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1; letter-spacing: -0.03em; }
 .sim-cell-sub { font-size: 12px; color: var(--sub); margin-top: 8px; font-weight: 500; }
 
+/* 別枠（運営メンバー作品など、取次外部作家の集計とは混ぜない） */
+.sep-box { margin: 28px 0 8px; background: #fff; border: 2px solid var(--primary); border-radius: 16px; padding: 22px 24px 18px; }
+.sep-tag { display: inline-block; font-family: "Inter", sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: var(--primary-deep); background: var(--primary-light); border-radius: 999px; padding: 3px 10px; margin-bottom: 8px; }
+.sep-box h3 { font-size: 18px; font-weight: 900; color: var(--ink); margin: 0 0 10px; letter-spacing: -0.01em; }
+.sep-box .sep-lead { font-size: 13.5px; color: var(--ink-soft); line-height: 1.75; font-weight: 500; margin: 0 0 16px; }
+.sep-box .sim-grid { margin: 0 0 4px; }
+
+
 /* === Tables === */
 .table-wrap { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 24px 0; overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; min-width: 420px; }
@@ -927,7 +935,7 @@ details.fold > div { font-size:13.5px; }
   .hero { padding-top:28px; padding-bottom:28px; }
   details { break-inside:avoid; }
   details > div { display:block !important; }
-  .problem-card, .solution-card, .hub-card, .voice, .note-card, .sim-cell, .step-row, .money-card, .table-wrap, .callout, .hl-box, .first-box, .contract-article, .compare-col, .cta-band, .proof-band,
+  .problem-card, .solution-card, .hub-card, .voice, .note-card, .sim-cell, .step-row, .money-card, .table-wrap, .callout, .hl-box, .first-box, .sep-box, .contract-article, .compare-col, .cta-band, .proof-band,
   .kp, .kp-grid, .mflow, .mbar, .ptl, .pay4, .sflow li, .cmp-wrap, details.fold, .ctl { break-inside:avoid; }
   footer, .cta-band, .chip-nav, .hero-cta { display:none !important; }
   h2, h3, .section-head, .page-hero { break-after:avoid; }
